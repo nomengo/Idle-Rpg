@@ -5,16 +5,20 @@ using UnityEngine.UI;
 
 public class BarManager : MonoBehaviour
 {
-    public Image experienceBar;
-    public Image healthBar;
-    public Image energyBar;
+    public GameObject experienceBar;
+    public GameObject healthBar;
+    public GameObject energyBar;
     public Text experienceText;
 
-    private int level = 0;
+    private int level = 1;
+    private void Start()
+    {
+       
+    }
 
     public void GetExperience(float experience)
     {
-        experienceBar.GetComponent<Image>().fillAmount += experience;
+        experienceBar.GetComponent<Image>().fillAmount += experience / level;
     }
 
     public void HealthDecrease(float damage)
@@ -34,6 +38,14 @@ public class BarManager : MonoBehaviour
             level++;
             experienceText.text = "LEVEL: " + level.ToString("0");
             experienceBar.GetComponent<Image>().fillAmount = 0;
+        }
+        if(energyBar.GetComponent<Image>().fillAmount <= 0)
+        {
+            energyBar.GetComponent<Image>().fillAmount = 1;
+        }
+        if(healthBar.GetComponent<Image>().fillAmount <= 0)
+        {
+            healthBar.GetComponent<Image>().fillAmount = 1;
         }
     }
 

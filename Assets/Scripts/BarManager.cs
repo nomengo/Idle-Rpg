@@ -8,13 +8,10 @@ public class BarManager : MonoBehaviour
     public GameObject experienceBar;
     public GameObject healthBar;
     public GameObject energyBar;
+    public Text moneyText;
     public Text experienceText;
 
     private int level = 1;
-    private void Start()
-    {
-       
-    }
 
     public void GetExperience(float experience)
     {
@@ -29,6 +26,12 @@ public class BarManager : MonoBehaviour
     public void EnergyDecrease(float amount)
     {
         energyBar.GetComponent<Image>().fillAmount -= amount;
+    }
+
+    public void GiveMeTheMoney(int money)
+    {
+        PlayerData.money += money;
+        moneyText.text = PlayerData.money.ToString();
     }
 
     private void Update()

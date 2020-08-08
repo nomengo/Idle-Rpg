@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0319d1da5ecc13a449ec000133e4b3e3, type: 3}
+  m_Name: New Creature Data List 1
+  m_EditorClassIdentifier: 
+  creatureList:
+  - creatureName: anan
+    creatureLevel: 1
+    rewardForCreature: 1
+    howMuchEnergyNeededForOneTime: 0.01
+    howMuchHealthNeededForOneTime: 0.01
+    howMuchExperienceDoesOneGonnaGet: 0.01
+  - creatureName: WoodDragon
+    creatureLevel: 150
+    rewardForCreature: 10000
+    howMuchEnergyNeededForOneTime: 1
+    howMuchHealthNeededForOneTime: 1
+    howMuchExperienceDoesOneGonnaGet: 1
+  - creatureName: Charmion
+    creatureLevel: 200
+    rewardForCreature: 50000
+    howMuchEnergyNeededForOneTime: 1.5
+    howMuchHealthNeededForOneTime: 1.5
+    howMuchExperienceDoesOneGonnaGet: 1.8
+  - creatureName: EarthCelesstial
+    creatureLevel: 300
+    rewardForCreature: 1000000
+    howMuchEnergyNeededForOneTime: 3
+    howMuchHealthNeededForOneTime: 3
+    howMuchExperienceDoesOneGonnaGet: 3.5
+  - creatureName: HighJudge
+    creatureLevel: 500
+    rewardForCreature: 5000000
+    howMuchEnergyNeededForOneTime: 7
+    howMuchHealthNeededForOneTime: 6.5
+    howMuchExperienceDoesOneGonnaGet: 10

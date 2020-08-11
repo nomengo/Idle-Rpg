@@ -10,13 +10,18 @@ public class PanelTransitions : MonoBehaviour
     public GameObject QuestPan;
     public GameObject CreaturePan;
     public GameObject ShopPan;
+    public GameObject DownGamePans;
+    public GameObject MainUpPan;
 
     public void GoToMainPanel()
     {
         ShopPan.SetActive(false);
+        DownGamePans.SetActive(true);
+        MainUpPan.SetActive(true);
         QuestPan.SetActive(false);
         CreaturePan.SetActive(false);
         MainDownPan.SetActive(true);
+        
     }
 
     public void GoToQuestPanel()
@@ -33,7 +38,8 @@ public class PanelTransitions : MonoBehaviour
 
     public void GoToShopPanel()
     {
-        MainDownPan.SetActive(false);
+        DownGamePans.SetActive(false);
+        MainUpPan.SetActive(false);
         ShopPan.SetActive(true);
     }
 }

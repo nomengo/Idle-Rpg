@@ -13,33 +13,63 @@ MonoBehaviour:
   m_Name: New Creature Data List 1
   m_EditorClassIdentifier: 
   creatureList:
-  - creatureName: anan
+  - creatureName: Brick
     creatureLevel: 1
     rewardForCreature: 1
+    howMuchEnergyNeededForOneTime: 0.001
+    howMuchHealthNeededForOneTime: 0
+    howMuchExperienceDoesOneGonnaGet: 0.0001
+  - creatureName: GreenSlime
+    creatureLevel: 2
+    rewardForCreature: 5
+    howMuchEnergyNeededForOneTime: 0.001
+    howMuchHealthNeededForOneTime: 0.001
+    howMuchExperienceDoesOneGonnaGet: 0.0015
+  - creatureName: BlueSlime
+    creatureLevel: 2
+    rewardForCreature: 6
+    howMuchEnergyNeededForOneTime: 0.0011
+    howMuchHealthNeededForOneTime: 0.0012
+    howMuchExperienceDoesOneGonnaGet: 0.002
+  - creatureName: Goblin
+    creatureLevel: 3
+    rewardForCreature: 10
+    howMuchEnergyNeededForOneTime: 0.002
+    howMuchHealthNeededForOneTime: 0.002
+    howMuchExperienceDoesOneGonnaGet: 0.003
+  - creatureName: Kobold
+    creatureLevel: 5
+    rewardForCreature: 50
+    howMuchEnergyNeededForOneTime: 0.005
+    howMuchHealthNeededForOneTime: 0.005
+    howMuchExperienceDoesOneGonnaGet: 0.006
+  - creatureName: BrickLord
+    creatureLevel: 5
+    rewardForCreature: 60
+    howMuchEnergyNeededForOneTime: 0.006
+    howMuchHealthNeededForOneTime: 0.006
+    howMuchExperienceDoesOneGonnaGet: 0.009
+  - creatureName: NormalZombie
+    creatureLevel: 8
+    rewardForCreature: 100
     howMuchEnergyNeededForOneTime: 0.01
     howMuchHealthNeededForOneTime: 0.01
-    howMuchExperienceDoesOneGonnaGet: 0.01
-  - creatureName: WoodDragon
-    creatureLevel: 150
-    rewardForCreature: 10000
-    howMuchEnergyNeededForOneTime: 1
-    howMuchHealthNeededForOneTime: 1
-    howMuchExperienceDoesOneGonnaGet: 1
-  - creatureName: Charmion
-    creatureLevel: 200
-    rewardForCreature: 50000
-    howMuchEnergyNeededForOneTime: 1.5
-    howMuchHealthNeededForOneTime: 1.5
-    howMuchExperienceDoesOneGonnaGet: 1.8
-  - creatureName: EarthCelesstial
-    creatureLevel: 300
-    rewardForCreature: 1000000
-    howMuchEnergyNeededForOneTime: 3
-    howMuchHealthNeededForOneTime: 3
-    howMuchExperienceDoesOneGonnaGet: 3.5
-  - creatureName: HighJudge
-    creatureLevel: 500
-    rewardForCreature: 5000000
-    howMuchEnergyNeededForOneTime: 7
-    howMuchHealthNeededForOneTime: 6.5
-    howMuchExperienceDoesOneGonnaGet: 10
+    howMuchExperienceDoesOneGonnaGet: 0.015
+  - creatureName: 
+    creatureLevel: 0
+    rewardForCreature: 0
+    howMuchEnergyNeededForOneTime: 0
+    howMuchHealthNeededForOneTime: 0
+    howMuchExperienceDoesOneGonnaGet: 0
+  - creatureName: 
+    creatureLevel: 0
+    rewardForCreature: 0
+    howMuchEnergyNeededForOneTime: 0
+    howMuchHealthNeededForOneTime: 0
+    howMuchExperienceDoesOneGonnaGet: 0
+  - creatureName: 
+    creatureLevel: 0
+    rewardForCreature: 0
+    howMuchEnergyNeededForOneTime: 0
+    howMuchHealthNeededForOneTime: 0
+    howMuchExperienceDoesOneGonnaGet: 0

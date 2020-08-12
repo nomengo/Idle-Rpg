@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     public GameObject ItemInfoPlace;
-    
+
     public void ShowInfo()
     {
         ItemInfoPlace.SetActive(true);
@@ -18,5 +18,6 @@ public class ShopManager : MonoBehaviour
 
         //
         ItemInfoPlace.SetActive(false);
+        
     }
 }

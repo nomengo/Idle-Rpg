@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ShopManager : MonoBehaviour
 {
-    public GameObject ItemInfoPlace;
+    private GameObject ItemInfoPlace;
+
+    private void Start()
+    {
+        ItemInfoPlace = gameObject.transform.GetChild(2).gameObject;
+    }
 
     public void ShowInfo()
     {
@@ -15,9 +21,17 @@ public class ShopManager : MonoBehaviour
     {
         //To do: buy the item
 
-
         //
         ItemInfoPlace.SetActive(false);
-        
+    }
+
+    private void OnMouseOver()
+    {
+        ItemInfoPlace.SetActive(true);
+    }
+
+    private void OnMouseExit()
+    {
+        ItemInfoPlace.SetActive(false);
     }
 }

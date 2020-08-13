@@ -11,5 +11,7 @@ public class ItemData
     public long itemPrice;
     public string itemDescription;
     public Sprite itemImage;
+    public enum itemType { Weapon , Armor , Consumable , Default};
+    public itemType type = itemType.Default;
 }
 

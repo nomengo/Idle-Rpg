@@ -17,124 +17,49 @@ MonoBehaviour:
     itemPrice: 100
     itemDescription: Sword from Nolan
     itemImage: {fileID: 21300000, guid: 2df007ebe243018469daeca64d8a1676, type: 3}
-    type: 0
+    itemID: 0
   - itemName: IronSword
     itemPrice: 25
     itemDescription: Just a normal sword made from iron
     itemImage: {fileID: 21300000, guid: 307feafc9138ffe4dbb7d9d808f3ed4b, type: 3}
-    type: 0
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
+    itemID: 1
+  - itemName: Nano
+    itemPrice: 200
+    itemDescription: Made from space stones
     itemImage: {fileID: 21300000, guid: 6fc06dae04e080641a3a65535a3f52aa, type: 3}
-    type: 3
+    itemID: 2
   - itemName: 
     itemPrice: 0
     itemDescription: 
     itemImage: {fileID: 0}
-    type: 3
+    itemID: 3
   - itemName: 
     itemPrice: 0
     itemDescription: 
     itemImage: {fileID: 0}
-    type: 3
+    itemID: 0
   - itemName: 
     itemPrice: 0
     itemDescription: 
     itemImage: {fileID: 0}
-    type: 3
+    itemID: 0
   - itemName: 
     itemPrice: 0
     itemDescription: 
     itemImage: {fileID: 0}
-    type: 3
+    itemID: 0
   - itemName: 
     itemPrice: 0
     itemDescription: 
     itemImage: {fileID: 0}
-    type: 3
+    itemID: 0
   - itemName: 
     itemPrice: 0
     itemDescription: 
     itemImage: {fileID: 0}
-    type: 3
+    itemID: 0
   - itemName: 
     itemPrice: 0
     itemDescription: 
     itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
-  - itemName: 
-    itemPrice: 0
-    itemDescription: 
-    itemImage: {fileID: 0}
-    type: 3
+    itemID: 0

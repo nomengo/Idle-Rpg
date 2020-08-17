@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ShopPanel : MonoBehaviour
 {
+    private Inventory inventory;
     public GameObject itemPrefab;
     public GameObject itemContainer;
     public ItemDataList itemData;
@@ -12,6 +13,7 @@ public class ShopPanel : MonoBehaviour
 
     void Start()
     {
+        inventory = FindObjectOfType<Inventory>();
         foreach (var item in itemData.itemDatas)
         {
             GameObject itemInstance = (GameObject)Instantiate(itemPrefab);
@@ -29,7 +31,7 @@ public class ShopPanel : MonoBehaviour
         itemInfoPan.transform.GetChild(1).Find("PriceText").GetComponent<Text>().text = obj.itemPrice.ToString("0");
         itemInfoPan.transform.GetChild(2).Find("DescriptionText").GetComponent<Text>().text = obj.itemDescription.ToString();
         //Do some other stuff with BUY button here
-        
+        itemInfoPan.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => BuyItem(obj));
         //
         itemInfoPan.transform.GetChild(4).GetComponent<Button>().onClick.AddListener(BackToShop);
     }
@@ -37,5 +39,10 @@ public class ShopPanel : MonoBehaviour
     private void BackToShop()
     {
         itemInfoPan.SetActive(false);
+    }
+
+    public void BuyItem(ItemData itemData)
+    {
+        
     }
 }

@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 46615170}
   m_Layer: 5
-  m_Name: ItemHolder
+  m_Name: weaponHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4145,7 +4145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1291976842}
   m_Layer: 5
-  m_Name: ItemHolder (1)
+  m_Name: armorHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6098,6 +6098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2071893168}
+  - component: {fileID: 2071893169}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -6121,6 +6122,21 @@ Transform:
   m_Father: {fileID: 746365871}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2071893169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071893167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9693971ba5ff64d4dbab3d6b526230d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponHolder: {fileID: 46615169}
+  armorHolder: {fileID: 1291976841}
+  isFull: 0000
 --- !u!1 &2090693193
 GameObject:
   m_ObjectHideFlags: 0

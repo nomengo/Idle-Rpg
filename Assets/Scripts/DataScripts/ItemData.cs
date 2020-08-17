@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+public enum ItemType { Weapon, Armor, Consumable, Default };
+
+
 [Serializable]
 public class ItemData
 {
-    public enum ItemType { Weapon , Armor , Consumable , Default };
+    public ItemType itemType;
     public string itemName;
     public long itemPrice;
     public string itemDescription;

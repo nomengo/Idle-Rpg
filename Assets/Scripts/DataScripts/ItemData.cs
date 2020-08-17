@@ -7,10 +7,10 @@ using System;
 [Serializable]
 public class ItemData
 {
+    public enum ItemType { Weapon , Armor , Consumable , Default };
     public string itemName;
     public long itemPrice;
     public string itemDescription;
     public Sprite itemImage;
-    public int itemID;
 }
 

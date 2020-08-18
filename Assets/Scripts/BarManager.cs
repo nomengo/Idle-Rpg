@@ -34,6 +34,12 @@ public class BarManager : MonoBehaviour
         moneyText.text = PlayerData.money.ToString();
     }
 
+    public void TakeMyMoney(int money)
+    {
+        PlayerData.money -= money;
+        moneyText.text = PlayerData.money.ToString();
+    } 
+
     private void Update()
     {
         if (experienceBar.GetComponent<Image>().fillAmount == 1)

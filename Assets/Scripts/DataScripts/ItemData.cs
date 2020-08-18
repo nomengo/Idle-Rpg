@@ -10,9 +10,9 @@ public enum ItemType { Weapon, Armor, Consumable, Default };
 [Serializable]
 public class ItemData
 {
-    public ItemType itemType;
+    public ItemType itemType = ItemType.Default;
     public string itemName;
-    public long itemPrice;
+    public int itemPrice;
     public string itemDescription;
     public Sprite itemImage;
 }

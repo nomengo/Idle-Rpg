@@ -12,10 +12,12 @@ public class PanelTransitions : MonoBehaviour
     public GameObject ShopPan;
     public GameObject DownGamePans;
     public GameObject MainUpPan;
+    public GameObject QuestPan;
 
     public void GoToMainPanel()
     {
         ShopPan.SetActive(false);
+        QuestPan.SetActive(false);
         DownGamePans.SetActive(true);
         MainUpPan.SetActive(true);
         GuildPan.SetActive(false);
@@ -26,8 +28,8 @@ public class PanelTransitions : MonoBehaviour
 
     public void GoToQuestPanel()
     {
-        MainDownPan.SetActive(false);
-        GuildPan.SetActive(true);
+        GuildPan.SetActive(false);
+        QuestPan.SetActive(true);
     }
 
     public void GoToHuntingPanel()
@@ -41,5 +43,11 @@ public class PanelTransitions : MonoBehaviour
         DownGamePans.SetActive(false);
         MainUpPan.SetActive(false);
         ShopPan.SetActive(true);
+    }
+
+    public void GoToGuildPanel()
+    {
+        MainDownPan.SetActive(false);
+        GuildPan.SetActive(true);
     }
 }

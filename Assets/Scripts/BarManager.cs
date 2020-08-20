@@ -11,11 +11,11 @@ public class BarManager : MonoBehaviour
     public Text moneyText;
     public Text experienceText;
 
-    private int level = 1;
+    private const int level = 1;
 
     public void GetExperience(float experience)
     {
-        experienceBar.GetComponent<Image>().fillAmount += experience / level;
+        experienceBar.GetComponent<Image>().fillAmount += experience / PlayerData.level;
     }
 
     public void HealthDecrease(float damage)
@@ -44,8 +44,8 @@ public class BarManager : MonoBehaviour
     {
         if (experienceBar.GetComponent<Image>().fillAmount == 1)
         {
-            level++;
-            experienceText.text = "LEVEL: " + level.ToString("0");
+            PlayerData.level += level;
+            experienceText.text = "LEVEL: " + PlayerData.level.ToString("0");
             experienceBar.GetComponent<Image>().fillAmount = 0;
         }
         if(energyBar.GetComponent<Image>().fillAmount <= 0)

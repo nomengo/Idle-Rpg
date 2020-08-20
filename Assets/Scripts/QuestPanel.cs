@@ -7,11 +7,24 @@ public class QuestPanel : MonoBehaviour
 {
     [SerializeField] private QuestDataList questDatas;
 
-    public Text questText;
-    public Button submitButton;
+    public Text titleText;
+    public Text descriptionText;
+    public Text rewardText;
+    public Text experienceText;
 
     private void Start()
     {
 
     }
+
+    private void QuestQueue()
+    {
+        //while (true)
+        //{
+        //    /*Do some stuff here...
+
+
+        //}
+    }
+
 }

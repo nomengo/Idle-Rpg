@@ -13,6 +13,38 @@ MonoBehaviour:
   m_Name: QuestsEnter
   m_EditorClassIdentifier: 
   quests:
-  - questDescription: anan ve baban
-    amount: 10
+  - isActive: 0
+    isDone: 0
+    questTitle: Into the anan(Part1)
+    questDescription: anan ve baban
+    money: 100
+    experience: 15
+    questID: 1
+  - isActive: 0
+    isDone: 0
+    questTitle: Into the anan(Part2)
+    questDescription: anan ve baban
+    money: 150
+    experience: 15
+    questID: 2
+  - isActive: 0
+    isDone: 0
+    questTitle: Into the anan(Part3)
+    questDescription: anan ve baban
+    money: 200
+    experience: 15
+    questID: 3
+  - isActive: 0
+    isDone: 0
+    questTitle: 
+    questDescription: anan ve baban
+    money: 0
+    experience: 0
+    questID: 1
+  - isActive: 0
+    isDone: 0
+    questTitle: 
+    questDescription: anan ve baban
+    money: 0
+    experience: 0
     questID: 1

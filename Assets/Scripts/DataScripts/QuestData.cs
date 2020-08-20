@@ -8,7 +8,10 @@ using System;
 public class QuestData 
 {
     public bool isActive;
+    public bool isDone;
+    public string questTitle;
     public string questDescription;
-    public int amount;
+    public int money;
+    public int experience;
     public int questID;
 }

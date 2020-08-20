@@ -55,12 +55,12 @@ MonoBehaviour:
     howMuchEnergyNeededForOneTime: 0.01
     howMuchHealthNeededForOneTime: 0.01
     howMuchExperienceDoesOneGonnaGet: 0.015
-  - creatureName: 
-    creatureLevel: 0
-    rewardForCreature: 0
-    howMuchEnergyNeededForOneTime: 0
-    howMuchHealthNeededForOneTime: 0
-    howMuchExperienceDoesOneGonnaGet: 0
+  - creatureName: Deja-VU
+    creatureLevel: 200
+    rewardForCreature: 5000
+    howMuchEnergyNeededForOneTime: 1
+    howMuchHealthNeededForOneTime: 1
+    howMuchExperienceDoesOneGonnaGet: 1
   - creatureName: 
     creatureLevel: 0
     rewardForCreature: 0

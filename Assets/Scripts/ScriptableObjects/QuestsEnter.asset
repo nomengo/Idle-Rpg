@@ -13,10 +13,19 @@ MonoBehaviour:
   m_Name: QuestsEnter
   m_EditorClassIdentifier: 
   quests:
-  - isActive: 1
+  - questType: 0
+    isActive: 1
     isDone: 0
     questTitle: Into the anan(Part1)
     questDescription: anan ve baban
     money: 100
     experience: 15
     questID: 0
+  - questType: 0
+    isActive: 0
+    isDone: 0
+    questTitle: Into the anan(Part2)
+    questDescription: zaaaaa ve ananan
+    money: 200
+    experience: 30
+    questID: 1

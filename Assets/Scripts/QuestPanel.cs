@@ -13,6 +13,8 @@ public class QuestPanel : MonoBehaviour
     public Text rewardText;
     public Text experienceText;
 
+    //public int questID = 0;
+
     private void Start()
     {
         foreach(var quest in questDatas.quests)
@@ -49,16 +51,36 @@ public class QuestPanel : MonoBehaviour
         {
             if (questGoal.quest.isDone)
             {
+                questGoal.quest = null;
                 foreach (var quest in questDatas.quests)
                 {
                     if (quest.isActive)
                     {
                         quest.isActive = false;
-                        break;
+                        PlayerData.questID++;
+                        if(PlayerData.questID <= questDatas.quests.Count)
+                        {
+                            questDatas.quests[PlayerData.questID].isActive = true;
+                            NewQuest();
+                            break;
+                        }
                     }
                 }
             }
         }
     }
 
+    public void NewQuest()
+    {
+        foreach (var newQuest in questDatas.quests)
+        {
+            if (newQuest.isActive)
+            {
+                titleText.text = newQuest.questTitle;
+                descriptionText.text = newQuest.questDescription;
+                rewardText.text = newQuest.money.ToString("0");
+                experienceText.text = newQuest.experience.ToString("0");
+            }
+        }
+    }
 }

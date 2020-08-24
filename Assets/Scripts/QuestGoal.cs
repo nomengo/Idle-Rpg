@@ -5,4 +5,9 @@ using UnityEngine;
 public class QuestGoal : MonoBehaviour
 {
     public QuestData quest;
+
+    private void Start()
+    {
+        
+    }
 }

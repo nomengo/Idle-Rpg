@@ -10,6 +10,8 @@ public class CreatureData
     public string creatureName;
     public int creatureLevel;
     public int rewardForCreature;
+    public int creatureHealth;
+    public int creatureArmor;
     public float howMuchEnergyNeededForOneTime;
     public float howMuchHealthNeededForOneTime;
     public float howMuchExperienceDoesOneGonnaGet;

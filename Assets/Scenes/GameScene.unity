@@ -383,6 +383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 46615170}
+  - component: {fileID: 46615171}
   m_Layer: 5
   m_Name: weaponHolder
   m_TagString: Untagged
@@ -411,6 +412,26 @@ RectTransform:
   m_AnchoredPosition: {x: -190.74, y: -0.000020682}
   m_SizeDelta: {x: 125, y: 124.999985}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &46615171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46615169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7f5eba349890948bb658e1d8440d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData:
+    itemType: 0
+    itemName: 
+    itemPrice: 0
+    itemDescription: 
+    itemImage: {fileID: 0}
+    itemDamage: 0
+    itemArmor: 0
 --- !u!1 &73922290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,7 +1950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &595783017
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1988,7 +2009,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.9238281, y: -0.000030517578}
+  m_AnchoredPosition: {x: -0.9238281, y: -0.000061035156}
   m_SizeDelta: {x: 150, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &605234451
@@ -3276,7 +3297,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.9237671, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0.9237671, y: 0.000061035156}
   m_SizeDelta: {x: 150, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &800923615
@@ -3692,7 +3713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &922326088
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3944,6 +3965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 965889012}
+  - component: {fileID: 965889013}
   m_Layer: 5
   m_Name: ItemHolder (3)
   m_TagString: Untagged
@@ -3971,6 +3993,26 @@ RectTransform:
   m_AnchoredPosition: {x: 190.74, y: 0.000020682}
   m_SizeDelta: {x: 125, y: 124.999985}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &965889013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965889011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7f5eba349890948bb658e1d8440d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData:
+    itemType: 0
+    itemName: 
+    itemPrice: 0
+    itemDescription: 
+    itemImage: {fileID: 0}
+    itemDamage: 0
+    itemArmor: 0
 --- !u!1 &982828769
 GameObject:
   m_ObjectHideFlags: 0
@@ -5258,6 +5300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1291976842}
+  - component: {fileID: 1291976843}
   m_Layer: 5
   m_Name: armorHolder
   m_TagString: Untagged
@@ -5286,6 +5329,26 @@ RectTransform:
   m_AnchoredPosition: {x: -65.740005, y: -0.000020682}
   m_SizeDelta: {x: 125, y: 124.999985}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1291976843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291976841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7f5eba349890948bb658e1d8440d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData:
+    itemType: 0
+    itemName: 
+    itemPrice: 0
+    itemDescription: 
+    itemImage: {fileID: 0}
+    itemDamage: 0
+    itemArmor: 0
 --- !u!1 &1302805084
 GameObject:
   m_ObjectHideFlags: 0
@@ -5940,6 +6003,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1464291963}
+  - component: {fileID: 1464291964}
   m_Layer: 5
   m_Name: healthPotHolder
   m_TagString: Untagged
@@ -5968,6 +6032,26 @@ RectTransform:
   m_AnchoredPosition: {x: 62.5, y: 0.000020682}
   m_SizeDelta: {x: 125, y: 124.999985}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1464291964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464291962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7f5eba349890948bb658e1d8440d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData:
+    itemType: 0
+    itemName: 
+    itemPrice: 0
+    itemDescription: 
+    itemImage: {fileID: 0}
+    itemDamage: 0
+    itemArmor: 0
 --- !u!1 &1538559437
 GameObject:
   m_ObjectHideFlags: 0
@@ -6138,7 +6222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1550418979
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6984,7 +7068,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -0.42279053, y: -674.99994}
+  m_SizeDelta: {x: -0.42279053, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1830992558
 MonoBehaviour:
@@ -8111,7 +8195,8 @@ MonoBehaviour:
   weaponHolder: {fileID: 46615169}
   armorHolder: {fileID: 1291976841}
   healthPotHolder: {fileID: 1464291962}
-  isFull: 000000
+  itemDamage: 0
+  itemArmor: 0
 --- !u!1 &2090693193
 GameObject:
   m_ObjectHideFlags: 0

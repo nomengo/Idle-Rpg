@@ -16,7 +16,7 @@ public class ItemData
     public string itemDescription;
     public Sprite itemImage;
 
-    public int itemDamage;
-    public int itemArmor;
+    public float itemDamage;
+    public float itemArmor;
 }
 

@@ -15,5 +15,6 @@ public class CreatureData
     public float creatureArmor;
     public float howMuchEnergyNeededForOneTime;
     public float howMuchHealthNeededForOneTime;
+
     public float howMuchExperienceDoesOneGonnaGet;
 }

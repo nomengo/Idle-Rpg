@@ -13,9 +13,11 @@ public class PanelTransitions : MonoBehaviour
     public GameObject DownGamePans;
     public GameObject MainUpPan;
     public GameObject QuestPan;
+    public GameObject BattlePan;
 
     public void GoToMainPanel()
     {
+        BattlePan.SetActive(false);
         ShopPan.SetActive(false);
         QuestPan.SetActive(false);
         DownGamePans.SetActive(true);

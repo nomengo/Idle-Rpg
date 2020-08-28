@@ -11,7 +11,14 @@ public class BarManager : MonoBehaviour
     public Text moneyText;
     public Text experienceText;
 
+    public float waitingTime = 0.1f; 
+
     private const int level = 1;
+
+    private void Start()
+    {
+        StartCoroutine(UpdateTheBars());
+    }
 
     public void GetExperience(float experience)
     {
@@ -48,14 +55,23 @@ public class BarManager : MonoBehaviour
             experienceText.text = "LEVEL: " + PlayerData.level.ToString("0");
             experienceBar.GetComponent<Image>().fillAmount = 0;
         }
-        if(energyBar.GetComponent<Image>().fillAmount <= 0)
-        {
-            energyBar.GetComponent<Image>().fillAmount = 1;
-        }
-        if(healthBar.GetComponent<Image>().fillAmount <= 0)
-        {
-            healthBar.GetComponent<Image>().fillAmount = 1;
-        }
     }
 
+    public IEnumerator UpdateTheBars()
+    {
+        while (true)
+        {
+            if (energyBar.GetComponent<Image>().fillAmount < 1)
+            {
+                energyBar.GetComponent<Image>().fillAmount += 0.01f;
+                yield return new WaitForSeconds(waitingTime);
+            }
+            if (healthBar.GetComponent<Image>().fillAmount < 1)
+            {
+                healthBar.GetComponent<Image>().fillAmount += 0.01f;
+                yield return new WaitForSeconds(waitingTime);
+            }
+            yield return null;
+        }
+    }
 }

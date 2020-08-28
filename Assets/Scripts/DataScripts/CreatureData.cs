@@ -10,6 +10,7 @@ public class CreatureData
     public string creatureName;
     public int creatureLevel;
     public int rewardForCreature;
+    public int CreatureID;
 
     public float creatureHealth;
     public float creatureArmor;

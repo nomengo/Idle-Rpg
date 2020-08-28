@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestGoal : MonoBehaviour
+public class BattlePanel : MonoBehaviour
 {
-    public QuestData quest;
+
 }

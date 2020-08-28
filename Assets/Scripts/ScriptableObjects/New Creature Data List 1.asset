@@ -16,60 +16,90 @@ MonoBehaviour:
   - creatureName: Brick
     creatureLevel: 1
     rewardForCreature: 1
+    CreatureID: 0
+    creatureHealth: 0
+    creatureArmor: 0
     howMuchEnergyNeededForOneTime: 0.001
     howMuchHealthNeededForOneTime: 0
     howMuchExperienceDoesOneGonnaGet: 0.0001
   - creatureName: GreenSlime
     creatureLevel: 2
     rewardForCreature: 5
+    CreatureID: 1
+    creatureHealth: 0
+    creatureArmor: 0
     howMuchEnergyNeededForOneTime: 0.001
     howMuchHealthNeededForOneTime: 0.001
     howMuchExperienceDoesOneGonnaGet: 0.0015
   - creatureName: BlueSlime
     creatureLevel: 2
     rewardForCreature: 6
+    CreatureID: 2
+    creatureHealth: 0
+    creatureArmor: 0
     howMuchEnergyNeededForOneTime: 0.0011
     howMuchHealthNeededForOneTime: 0.0012
     howMuchExperienceDoesOneGonnaGet: 0.002
   - creatureName: Goblin
     creatureLevel: 3
     rewardForCreature: 10
+    CreatureID: 3
+    creatureHealth: 0
+    creatureArmor: 0
     howMuchEnergyNeededForOneTime: 0.002
     howMuchHealthNeededForOneTime: 0.002
     howMuchExperienceDoesOneGonnaGet: 0.003
   - creatureName: Kobold
     creatureLevel: 5
     rewardForCreature: 50
+    CreatureID: 4
+    creatureHealth: 0
+    creatureArmor: 0
     howMuchEnergyNeededForOneTime: 0.005
     howMuchHealthNeededForOneTime: 0.005
     howMuchExperienceDoesOneGonnaGet: 0.006
   - creatureName: BrickLord
     creatureLevel: 5
     rewardForCreature: 60
+    CreatureID: 5
+    creatureHealth: 0
+    creatureArmor: 0
     howMuchEnergyNeededForOneTime: 0.006
     howMuchHealthNeededForOneTime: 0.006
     howMuchExperienceDoesOneGonnaGet: 0.009
   - creatureName: NormalZombie
     creatureLevel: 8
     rewardForCreature: 100
+    CreatureID: 6
+    creatureHealth: 0
+    creatureArmor: 0
     howMuchEnergyNeededForOneTime: 0.01
     howMuchHealthNeededForOneTime: 0.01
     howMuchExperienceDoesOneGonnaGet: 0.015
   - creatureName: Deja-VU
     creatureLevel: 200
     rewardForCreature: 5000
+    CreatureID: 7
+    creatureHealth: 0
+    creatureArmor: 0
     howMuchEnergyNeededForOneTime: 1
     howMuchHealthNeededForOneTime: 1
     howMuchExperienceDoesOneGonnaGet: 1
   - creatureName: 
     creatureLevel: 0
     rewardForCreature: 0
+    CreatureID: 8
+    creatureHealth: 0
+    creatureArmor: 0
     howMuchEnergyNeededForOneTime: 0
     howMuchHealthNeededForOneTime: 0
     howMuchExperienceDoesOneGonnaGet: 0
   - creatureName: 
     creatureLevel: 0
     rewardForCreature: 0
+    CreatureID: 9
+    creatureHealth: 0
+    creatureArmor: 0
     howMuchEnergyNeededForOneTime: 0
     howMuchHealthNeededForOneTime: 0
     howMuchExperienceDoesOneGonnaGet: 0

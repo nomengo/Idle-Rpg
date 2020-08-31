@@ -80,10 +80,10 @@ MonoBehaviour:
     creatureLevel: 200
     rewardForCreature: 5000
     CreatureID: 7
-    creatureHealth: 0
-    creatureArmor: 0
-    howMuchEnergyNeededForOneTime: 1
-    howMuchHealthNeededForOneTime: 1
+    creatureHealth: 3000
+    creatureArmor: 500
+    howMuchEnergyNeededForOneTime: 10
+    howMuchHealthNeededForOneTime: 10
     howMuchExperienceDoesOneGonnaGet: 1
   - creatureName: 
     creatureLevel: 0

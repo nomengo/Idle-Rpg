@@ -9,7 +9,9 @@ public class CreaturePanel : MonoBehaviour
 
     public GameObject creaturePrefab;
     public GameObject creatureContainer;
-    public CreatureDataList Data; 
+    public CreatureDataList Data;
+
+    [SerializeField] private BattlePanel battlePanel;
 
     void Start()
     {
@@ -23,7 +25,10 @@ public class CreaturePanel : MonoBehaviour
             //creatureInstance.transform.GetComponent<Button>().onClick.AddListener(() => { FindObjectOfType<BarManager>().EnergyDecrease(item.howMuchEnergyNeededForOneTime); });
             //creatureInstance.transform.GetComponent<Button>().onClick.AddListener(() => { FindObjectOfType<BarManager>().GiveMeTheMoney(item.rewardForCreature); });
 
-            creatureInstance.transform.GetComponent<Button>().onClick.AddListener(() => ReturnID(item));
+            creatureInstance.transform.GetComponent<Button>().onClick.AddListener(() => {
+                int id = ReturnID(item);
+                battlePanel.ReceiveId(id);
+            });
             creatureInstance.transform.GetComponent<Button>().onClick.AddListener(()=> BattlePanel.SetActive(true));
 
             creatureInstance.transform.GetChild(0).GetComponent<Text>().text = item.howMuchExperienceDoesOneGonnaGet.ToString();

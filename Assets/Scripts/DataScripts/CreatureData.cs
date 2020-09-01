@@ -8,6 +8,8 @@ public class CreatureData
 {
     //Data properties for every single creature in our creatureList
     public string creatureName;
+    public string creatureDescription;
+
     public int creatureLevel;
     public int rewardForCreature;
     public int CreatureID;
@@ -16,6 +18,6 @@ public class CreatureData
     public float creatureArmor;
     public float howMuchEnergyNeededForOneTime;
     public float howMuchHealthNeededForOneTime;
-
     public float howMuchExperienceDoesOneGonnaGet;
+
 }

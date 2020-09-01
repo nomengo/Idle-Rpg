@@ -11,6 +11,7 @@ public class BattlePanel : MonoBehaviour
     [SerializeField] private Text creatureArmor;
     [SerializeField] private Text takenEnergy;
     [SerializeField] private Text takenHealth;
+    [SerializeField] private Text description;
 
     [SerializeField] private GameObject weapon;
     [SerializeField] private GameObject armor;
@@ -27,6 +28,7 @@ public class BattlePanel : MonoBehaviour
                 creatureArmor.text = "Armor:" + creature.creatureArmor.ToString();
                 takenEnergy.text = "Energy Needed:" + creature.howMuchEnergyNeededForOneTime.ToString();
                 takenHealth.text = "Health Needed:" + creature.howMuchHealthNeededForOneTime.ToString();
+                description.text = creature.creatureDescription;
             }
         }
     }

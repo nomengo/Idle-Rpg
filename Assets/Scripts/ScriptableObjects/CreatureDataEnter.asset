@@ -10,19 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0319d1da5ecc13a449ec000133e4b3e3, type: 3}
-  m_Name: New Creature Data List 1
+  m_Name: CreatureDataEnter
   m_EditorClassIdentifier: 
   creatureList:
   - creatureName: Brick
+    creatureDescription: ' Brick but not a normal brick'
     creatureLevel: 1
     rewardForCreature: 1
     CreatureID: 0
-    creatureHealth: 0
-    creatureArmor: 0
+    creatureHealth: 10
+    creatureArmor: 1
     howMuchEnergyNeededForOneTime: 0.001
     howMuchHealthNeededForOneTime: 0
     howMuchExperienceDoesOneGonnaGet: 0.0001
   - creatureName: GreenSlime
+    creatureDescription: 
     creatureLevel: 2
     rewardForCreature: 5
     CreatureID: 1
@@ -32,6 +34,7 @@ MonoBehaviour:
     howMuchHealthNeededForOneTime: 0.001
     howMuchExperienceDoesOneGonnaGet: 0.0015
   - creatureName: BlueSlime
+    creatureDescription: 
     creatureLevel: 2
     rewardForCreature: 6
     CreatureID: 2
@@ -41,6 +44,7 @@ MonoBehaviour:
     howMuchHealthNeededForOneTime: 0.0012
     howMuchExperienceDoesOneGonnaGet: 0.002
   - creatureName: Goblin
+    creatureDescription: 
     creatureLevel: 3
     rewardForCreature: 10
     CreatureID: 3
@@ -50,6 +54,7 @@ MonoBehaviour:
     howMuchHealthNeededForOneTime: 0.002
     howMuchExperienceDoesOneGonnaGet: 0.003
   - creatureName: Kobold
+    creatureDescription: 
     creatureLevel: 5
     rewardForCreature: 50
     CreatureID: 4
@@ -59,6 +64,7 @@ MonoBehaviour:
     howMuchHealthNeededForOneTime: 0.005
     howMuchExperienceDoesOneGonnaGet: 0.006
   - creatureName: BrickLord
+    creatureDescription: 
     creatureLevel: 5
     rewardForCreature: 60
     CreatureID: 5
@@ -68,6 +74,7 @@ MonoBehaviour:
     howMuchHealthNeededForOneTime: 0.006
     howMuchExperienceDoesOneGonnaGet: 0.009
   - creatureName: NormalZombie
+    creatureDescription: 
     creatureLevel: 8
     rewardForCreature: 100
     CreatureID: 6
@@ -76,7 +83,8 @@ MonoBehaviour:
     howMuchEnergyNeededForOneTime: 0.01
     howMuchHealthNeededForOneTime: 0.01
     howMuchExperienceDoesOneGonnaGet: 0.015
-  - creatureName: Deja-VU
+  - creatureName: Skeleton
+    creatureDescription: 
     creatureLevel: 200
     rewardForCreature: 5000
     CreatureID: 7
@@ -86,6 +94,7 @@ MonoBehaviour:
     howMuchHealthNeededForOneTime: 10
     howMuchExperienceDoesOneGonnaGet: 1
   - creatureName: 
+    creatureDescription: 
     creatureLevel: 0
     rewardForCreature: 0
     CreatureID: 8
@@ -95,6 +104,7 @@ MonoBehaviour:
     howMuchHealthNeededForOneTime: 0
     howMuchExperienceDoesOneGonnaGet: 0
   - creatureName: 
+    creatureDescription: 
     creatureLevel: 0
     rewardForCreature: 0
     CreatureID: 9

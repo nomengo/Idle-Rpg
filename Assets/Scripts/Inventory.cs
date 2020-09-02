@@ -9,8 +9,8 @@ public class Inventory : MonoBehaviour
     public GameObject armorHolder;
     public GameObject healthPotHolder;
 
-    public int itemDamage;
-    public int itemArmor;
+    public float itemDamage;
+    public float itemArmor;
 
    // public bool[] isFull;
 
@@ -34,7 +34,6 @@ public class Inventory : MonoBehaviour
             Debug.Log("ItemType : Armor");
             armorHolder.transform.GetChild(1).GetComponent<Image>().sprite = item.itemImage;
             AllDatasToArmorHolder(item);
-            
         }
        else
         {
@@ -42,17 +41,22 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AllDatasToWeaponHolder(ItemData itemData)
+    private void AllDatasToWeaponHolder(ItemData itemData)
     {
         weaponHolder.GetComponent<HolderData>().itemData.itemType = itemData.itemType;
         weaponHolder.GetComponent<HolderData>().itemData.itemName = itemData.itemName;
         weaponHolder.GetComponent<HolderData>().itemData.itemDamage = itemData.itemDamage;
+        itemDamage = itemData.itemDamage;
     }
 
-    public void AllDatasToArmorHolder(ItemData itemData)
+    private void AllDatasToArmorHolder(ItemData itemData)
     {
         armorHolder.GetComponent<HolderData>().itemData.itemType = itemData.itemType;
         armorHolder.GetComponent<HolderData>().itemData.itemName = itemData.itemName;
         armorHolder.GetComponent<HolderData>().itemData.itemArmor = itemData.itemArmor;
+        itemArmor = itemData.itemArmor;
     }
+
+    
+
 }

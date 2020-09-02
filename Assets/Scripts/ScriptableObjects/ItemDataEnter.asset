@@ -39,19 +39,19 @@ MonoBehaviour:
     itemPrice: 5000
     itemDescription: Iron Chestplate
     itemImage: {fileID: 21300000, guid: ed0f15d461e0f3f478ffd8f0ece08e3c, type: 3}
-    itemDamage: 100
-    itemArmor: 0
+    itemDamage: 0
+    itemArmor: 100
   - itemType: 1
     itemName: SteelPlate
     itemPrice: 500
     itemDescription: Steel Chestplate
     itemImage: {fileID: 21300000, guid: 1b135e109e672e947848bc768225c8f4, type: 3}
-    itemDamage: 10
-    itemArmor: 0
+    itemDamage: 0
+    itemArmor: 10
   - itemType: 1
     itemName: SteelPlate
     itemPrice: 2000
     itemDescription: Steel Chestplate
     itemImage: {fileID: 21300000, guid: 1b135e109e672e947848bc768225c8f4, type: 3}
-    itemDamage: 50
-    itemArmor: 0
+    itemDamage: 0
+    itemArmor: 50

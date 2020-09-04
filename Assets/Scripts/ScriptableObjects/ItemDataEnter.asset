@@ -14,44 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDatas:
   - itemType: 0
-    itemName: Nolan
-    itemPrice: 1000
-    itemDescription: Sword from Nolan
-    itemImage: {fileID: 21300000, guid: 2df007ebe243018469daeca64d8a1676, type: 3}
-    itemDamage: 20
-    itemArmor: 0
-  - itemType: 0
-    itemName: IronSword
+    itemName: anan
     itemPrice: 500
-    itemDescription: Just a normal sword made from iron
-    itemImage: {fileID: 21300000, guid: 307feafc9138ffe4dbb7d9d808f3ed4b, type: 3}
-    itemDamage: 5
-    itemArmor: 0
-  - itemType: 0
-    itemName: Nano
-    itemPrice: 5000
-    itemDescription: Made from space stones
-    itemImage: {fileID: 21300000, guid: 6fc06dae04e080641a3a65535a3f52aa, type: 3}
-    itemDamage: 0
+    itemDescription: "ananc\u0131 silah\u0131"
+    itemImage: {fileID: 21300000, guid: 2df007ebe243018469daeca64d8a1676, type: 3}
+    itemDamage: 10
     itemArmor: 0
   - itemType: 1
-    itemName: Irob
-    itemPrice: 5000
-    itemDescription: Iron Chestplate
+    itemName: nomen
+    itemPrice: 500
+    itemDescription: "uzak diyarlar\u0131n kadim savunma silah\u0131"
     itemImage: {fileID: 21300000, guid: ed0f15d461e0f3f478ffd8f0ece08e3c, type: 3}
     itemDamage: 0
-    itemArmor: 100
-  - itemType: 1
-    itemName: SteelPlate
-    itemPrice: 500
-    itemDescription: Steel Chestplate
-    itemImage: {fileID: 21300000, guid: 1b135e109e672e947848bc768225c8f4, type: 3}
-    itemDamage: 0
-    itemArmor: 10
-  - itemType: 1
-    itemName: SteelPlate
-    itemPrice: 2000
-    itemDescription: Steel Chestplate
-    itemImage: {fileID: 21300000, guid: 1b135e109e672e947848bc768225c8f4, type: 3}
-    itemDamage: 0
-    itemArmor: 50
+    itemArmor: 15

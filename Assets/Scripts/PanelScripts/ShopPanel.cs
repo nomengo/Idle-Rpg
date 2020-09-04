@@ -10,7 +10,10 @@ public class ShopPanel : MonoBehaviour
 
     public GameObject itemPrefab;
     public GameObject itemContainer;
-    public ItemDataList itemData;
+    public GameObject itemDamagePlace;
+    public GameObject itemArmorPlace;
+
+    [SerializeField] private ItemDataList itemData;
 
     [SerializeField] private GameObject itemInfoPan;
 
@@ -23,7 +26,7 @@ public class ShopPanel : MonoBehaviour
             GameObject itemInstance = (GameObject)Instantiate(itemPrefab);
             itemInstance.transform.SetParent(itemContainer.transform, false);
             itemInstance.transform.Find("ItemButton").GetComponent<Image>().sprite = item.itemImage;
-            itemInstance.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() => ItemInfoCall(item));
+            itemInstance.transform.Find("ItemButton").GetComponent<Button>().onClick.AddListener(() => ItemInfoCall(item));
         }
 
     }
@@ -34,16 +37,27 @@ public class ShopPanel : MonoBehaviour
         itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(0).Find("NameText").GetComponent<Text>().text = obj.itemName.ToString();
         itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(1).Find("PriceText").GetComponent<Text>().text = obj.itemPrice.ToString("0");
         itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(2).Find("DescriptionText").GetComponent<Text>().text = obj.itemDescription.ToString();
-        itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(3).Find("ItemDamageText").GetComponent<Text>().text = obj.itemDamage.ToString();
-        itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(4).Find("ItemArmorText").GetComponent<Text>().text = obj.itemArmor.ToString();
+        if(obj.itemType == ItemType.Weapon)
+        {
+            itemDamagePlace.SetActive(true);
+            itemDamagePlace.GetComponent<RectTransform>().localScale = GetComponentInParent<RectTransform>().localScale;
+            itemDamagePlace.transform.Find("ItemDamageText").GetComponent<Text>().text = "Damage: " + obj.itemDamage.ToString();
+        }
+        else if(obj.itemType == ItemType.Armor)
+        {
+            itemArmorPlace.SetActive(true);
+            itemArmorPlace.transform.Find("ItemArmorText").GetComponent<Text>().text = "Armor: " + obj.itemArmor.ToString();
+        }
         //Do some other stuff with BUY button here
-        itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(5).GetComponent<Button>().onClick.AddListener(() => BuyItem(obj));
+        itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(4).GetComponent<Button>().onClick.AddListener(() => BuyItem(obj));
         //
-        itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(6).GetComponent<Button>().onClick.AddListener(BackToShop);
+        itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(5).GetComponent<Button>().onClick.AddListener(BackToShop);
     }
 
     private void BackToShop()
     {
+        itemDamagePlace.SetActive(false);
+        itemArmorPlace.SetActive(false);
         itemInfoPan.SetActive(false);
     }
 
@@ -51,6 +65,8 @@ public class ShopPanel : MonoBehaviour
     {
         barManager.TakeMyMoney(itemData.itemPrice);
         inventory.ItemPickUp(itemData);
+        itemDamagePlace.SetActive(false);
+        itemArmorPlace.SetActive(false);
         itemInfoPan.SetActive(false);
     }
 

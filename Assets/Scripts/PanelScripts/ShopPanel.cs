@@ -40,18 +40,23 @@ public class ShopPanel : MonoBehaviour
         if(obj.itemType == ItemType.Weapon)
         {
             itemDamagePlace.SetActive(true);
-            itemDamagePlace.GetComponent<RectTransform>().localScale = GetComponentInParent<RectTransform>().localScale;
-            itemDamagePlace.transform.Find("ItemDamageText").GetComponent<Text>().text = "Damage: " + obj.itemDamage.ToString();
+            itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(3).Find("ItemDamageText").GetComponent<Text>().text = "Damage: " + obj.itemDamage.ToString();
         }
         else if(obj.itemType == ItemType.Armor)
         {
             itemArmorPlace.SetActive(true);
-            itemArmorPlace.transform.Find("ItemArmorText").GetComponent<Text>().text = "Armor: " + obj.itemArmor.ToString();
+            itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(4).Find("ItemArmorText").GetComponent<Text>().text = "Armor: " + obj.itemArmor.ToString();
         }
-        //Do some other stuff with BUY button here
-        itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(4).GetComponent<Button>().onClick.AddListener(() => BuyItem(obj));
+
+        
+        //Editörden buton'a bir şey ekleyeceksen dikkat et o listenerıda runtimeda siler
+        itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(5).GetComponent<Button>().onClick.RemoveAllListeners();
         //
-        itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(5).GetComponent<Button>().onClick.AddListener(BackToShop);
+        itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(5).GetComponent<Button>().onClick.AddListener(() => BuyItem(obj));
+
+        itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(6).GetComponent<Button>().onClick.RemoveAllListeners();
+
+        itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(6).GetComponent<Button>().onClick.AddListener(BackToShop);
     }
 
     private void BackToShop()

@@ -13,10 +13,14 @@ public class BattlePanel : MonoBehaviour
     [SerializeField] private Text takenHealth;
     [SerializeField] private Text description;
 
-    [SerializeField] private GameObject weapon;
-    [SerializeField] private GameObject armor;
+    private Inventory inventory;
 
     private bool isTheBattleCompleted;
+
+    private void Start()
+    {
+        inventory = FindObjectOfType<Inventory>();
+    }
 
     public void ReceiveId(int id)
     {
@@ -46,7 +50,7 @@ public class BattlePanel : MonoBehaviour
     {
         while (true)
         {
-
+            //if(inventory)
 
             yield return null;
         }

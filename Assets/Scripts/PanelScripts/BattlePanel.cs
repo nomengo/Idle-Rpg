@@ -12,6 +12,12 @@ public class BattlePanel : MonoBehaviour
     [SerializeField] private Text takenEnergy;
     [SerializeField] private Text takenHealth;
     [SerializeField] private Text description;
+    [SerializeField] private Text BattleText;
+
+    private float MonsterHealth;
+    private float MonsterArmor;
+    private float MonsterDamage;
+    private float RequiredEnergyForKilling;
 
     private Inventory inventory;
 
@@ -28,10 +34,19 @@ public class BattlePanel : MonoBehaviour
         {
             if(creature.CreatureID == id)
             {
+
                 creatureHealth.text = "Health:" + creature.creatureHealth.ToString();
+                MonsterHealth = creature.creatureHealth;
+
                 creatureArmor.text = "Armor:" + creature.creatureArmor.ToString();
+                MonsterArmor = creature.creatureArmor;
+
                 takenEnergy.text = "Energy Needed:" + creature.howMuchEnergyNeededForOneTime.ToString();
+                RequiredEnergyForKilling = creature.howMuchEnergyNeededForOneTime;
+
                 takenHealth.text = "Health Needed:" + creature.howMuchHealthNeededForOneTime.ToString();
+                MonsterDamage = creature.howMuchHealthNeededForOneTime;
+
                 description.text = creature.creatureDescription;
             }
         }
@@ -50,8 +65,20 @@ public class BattlePanel : MonoBehaviour
     {
         while (true)
         {
-            //if(inventory)
-
+            if(inventory.itemDamage > 0 && inventory.itemArmor > 0)
+            {
+                MonsterHealth = (MonsterHealth + MonsterArmor) - inventory.itemDamage;
+                //Debug.Log(MonsterHealth);
+                BattleText.text = MonsterHealth.ToString("0");
+                yield return new WaitForSeconds(1f);
+            }
+            else
+            {
+                BattleText.text = "You Need Both Weapon And Armor!!!";
+                yield return new WaitForSeconds(2f);
+                BattleText.text = "";
+                break;
+            }
             yield return null;
         }
     }

@@ -28,8 +28,8 @@ MonoBehaviour:
     creatureLevel: 2
     rewardForCreature: 5
     CreatureID: 1
-    creatureHealth: 0
-    creatureArmor: 0
+    creatureHealth: 10
+    creatureArmor: 5
     howMuchEnergyNeededForOneTime: 0.001
     howMuchHealthNeededForOneTime: 0.001
     howMuchExperienceDoesOneGonnaGet: 0.0015

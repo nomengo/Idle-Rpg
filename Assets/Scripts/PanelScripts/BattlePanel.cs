@@ -18,13 +18,21 @@ public class BattlePanel : MonoBehaviour
     private float MonsterArmor;
     private float MonsterDamage;
     private float RequiredEnergyForKilling;
+    private float Experience;
+
+    public float waitTime;
 
     private Inventory inventory;
+    private BarManager _barManager;
 
     private bool isTheBattleCompleted;
 
+    private int Reward;
+
     private void Start()
     {
+        waitTime = 1f;
+        _barManager = FindObjectOfType<BarManager>();
         inventory = FindObjectOfType<Inventory>();
     }
 
@@ -34,6 +42,9 @@ public class BattlePanel : MonoBehaviour
         {
             if(creature.CreatureID == id)
             {
+
+                Reward = creature.rewardForCreature;
+                Experience = creature.howMuchExperienceDoesOneGonnaGet;
 
                 creatureHealth.text = "Health:" + creature.creatureHealth.ToString();
                 MonsterHealth = creature.creatureHealth;
@@ -67,15 +78,59 @@ public class BattlePanel : MonoBehaviour
         {
             if(inventory.itemDamage > 0 && inventory.itemArmor > 0)
             {
-                MonsterHealth = (MonsterHealth + MonsterArmor) - inventory.itemDamage;
-                //Debug.Log(MonsterHealth);
-                BattleText.text = MonsterHealth.ToString("0");
-                yield return new WaitForSeconds(1f);
+                for (int i = 1; i < 9999; i++)
+                {
+                    if(MonsterHealth > 0 && _barManager.healthBar.GetComponent<Image>().fillAmount > 0)
+                    {
+                        //Her iki tarafında canı varken
+                        if (i % 2 == 0)
+                        {
+                            MonsterHealth = (MonsterHealth + MonsterArmor) - inventory.itemDamage;
+                            //Debug.Log(MonsterHealth);
+                            BattleText.text = MonsterHealth.ToString("0");
+                            yield return new WaitForSeconds(waitTime);
+                        }
+                        else if (i % 2 == 1)
+                        {
+                            float tDamage = MonsterDamage - inventory.itemArmor;
+                            if (tDamage <= 0)
+                            {
+                                tDamage = -tDamage;
+                                _barManager.HealthDecrease(tDamage);
+                                _barManager.EnergyDecrease(RequiredEnergyForKilling);
+                                BattleText.text = tDamage.ToString("0") + " Damage aldın!";
+                            }
+                            else
+                            {
+                                _barManager.HealthDecrease(tDamage);
+                                _barManager.EnergyDecrease(RequiredEnergyForKilling);
+                                BattleText.text = tDamage.ToString("0") + " Damage aldın!";
+                            }
+                            yield return new WaitForSeconds(waitTime);
+                        }
+                    }
+                    else if(MonsterHealth <= 0)
+                    {
+                        //Düşman öldüyse
+                        BattleText.text = "YOU WİN!!";
+                        _barManager.GiveMeTheMoney(Reward);
+                        _barManager.GetExperience(Experience);
+                        BattleText.text = "";
+                        break;
+                    }
+                    else if(_barManager.healthBar.GetComponent<Image>().fillAmount <= 0)
+                    {
+                        //Sen öldüysen
+                        BattleText.text = "YOU LOSE!!";
+                        BattleText.text = "";
+                        break;
+                    }
+                }
             }
             else
             {
                 BattleText.text = "You Need Both Weapon And Armor!!!";
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(waitTime);
                 BattleText.text = "";
                 break;
             }

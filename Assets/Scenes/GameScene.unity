@@ -607,6 +607,7 @@ MonoBehaviour:
   takenHealth: {fileID: 1192527598}
   description: {fileID: 1740673561}
   BattleText: {fileID: 417457274}
+  waitTime: 0
 --- !u!1 &66414919
 GameObject:
   m_ObjectHideFlags: 0

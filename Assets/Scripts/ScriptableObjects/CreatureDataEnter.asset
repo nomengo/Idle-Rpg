@@ -68,10 +68,10 @@ MonoBehaviour:
     creatureLevel: 5
     rewardForCreature: 60
     CreatureID: 5
-    creatureHealth: 0
-    creatureArmor: 0
+    creatureHealth: 500
+    creatureArmor: 50
     howMuchEnergyNeededForOneTime: 0.006
-    howMuchHealthNeededForOneTime: 0.006
+    howMuchHealthNeededForOneTime: 0.6
     howMuchExperienceDoesOneGonnaGet: 0.009
   - creatureName: NormalZombie
     creatureDescription: 

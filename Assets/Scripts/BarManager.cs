@@ -61,16 +61,16 @@ public class BarManager : MonoBehaviour
     {
         while (true)
         {
-            if (energyBar.GetComponent<Image>().fillAmount < 1)
+            if (energyBar.GetComponent<Image>().fillAmount == 0)
             {
-                energyBar.GetComponent<Image>().fillAmount += 0.01f;
                 yield return new WaitForSeconds(waitingTime);
+                energyBar.GetComponent<Image>().fillAmount += 0.0001f;
             }
-            if (healthBar.GetComponent<Image>().fillAmount < 1)
-            {
-                healthBar.GetComponent<Image>().fillAmount += 0.01f;
-                yield return new WaitForSeconds(waitingTime);
-            }
+            //if (healthBar.GetComponent<Image>().fillAmount == 0)
+            //{
+            //    yield return new WaitForSeconds(waitingTime);
+            //    healthBar.GetComponent<Image>().fillAmount += 0.0001f;
+            //}
             yield return null;
         }
     }

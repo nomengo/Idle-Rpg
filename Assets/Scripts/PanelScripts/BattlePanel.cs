@@ -85,7 +85,16 @@ public class BattlePanel : MonoBehaviour
                         //Her iki tarafında canı varken
                         if (i % 2 == 0)
                         {
-                            MonsterHealth = (MonsterHealth + MonsterArmor) - inventory.itemDamage;
+                            float gDamage =   MonsterArmor - inventory.itemDamage;
+                            if(gDamage < 0)
+                            {
+                                gDamage = -gDamage;
+                                MonsterHealth = MonsterHealth - gDamage;
+                            }
+                            else
+                            {
+                                MonsterHealth = MonsterHealth - gDamage;
+                            }
                             //Debug.Log(MonsterHealth);
                             BattleText.text = MonsterHealth.ToString("0");
                             yield return new WaitForSeconds(waitTime);
@@ -115,13 +124,15 @@ public class BattlePanel : MonoBehaviour
                         BattleText.text = "YOU WİN!!";
                         _barManager.GiveMeTheMoney(Reward);
                         _barManager.GetExperience(Experience);
+                        yield return new WaitForSeconds(waitTime);
                         BattleText.text = "";
                         break;
                     }
-                    else if(_barManager.healthBar.GetComponent<Image>().fillAmount <= 0)
+                    else if(_barManager.healthBar.GetComponent<Image>().fillAmount == 0)
                     {
                         //Sen öldüysen
                         BattleText.text = "YOU LOSE!!";
+                        yield return new WaitForSeconds(waitTime);
                         BattleText.text = "";
                         break;
                     }

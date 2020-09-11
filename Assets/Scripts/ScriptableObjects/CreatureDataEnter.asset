@@ -18,7 +18,7 @@ MonoBehaviour:
     creatureLevel: 1
     rewardForCreature: 1
     CreatureID: 0
-    creatureHealth: 10
+    creatureHealth: 20
     creatureArmor: 1
     howMuchEnergyNeededForOneTime: 0.001
     howMuchHealthNeededForOneTime: 0

@@ -74,5 +74,4 @@ public class ShopPanel : MonoBehaviour
         itemArmorPlace.SetActive(false);
         itemInfoPan.SetActive(false);
     }
-
 }

@@ -21,6 +21,7 @@ MonoBehaviour:
     money: 100
     experience: 15
     questID: 0
+    requiredCreatureID: 0
   - questType: 0
     isActive: 0
     isDone: 0
@@ -29,3 +30,4 @@ MonoBehaviour:
     money: 200
     experience: 30
     questID: 1
+    requiredCreatureID: 1

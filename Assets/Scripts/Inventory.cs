@@ -56,7 +56,4 @@ public class Inventory : MonoBehaviour
         armorHolder.GetComponent<HolderData>().itemData.itemArmor = itemData.itemArmor;
         itemArmor = itemData.itemArmor;
     }
-
-    
-
 }

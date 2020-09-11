@@ -13,7 +13,27 @@ public class QuestPanel : MonoBehaviour
     public Text rewardText;
     public Text experienceText;
 
-    //public int questID = 0;
+    public int questID = 0;
+
+    private void Awake()
+    {
+        //This part will change but for now this is what we have
+        foreach (var fQuest in questDatas.quests)
+        {
+            if (fQuest.questID == 0)
+            {
+                if (fQuest.isActive == true)
+                {
+                    //do nothing
+                }
+                else
+                {
+                    fQuest.isActive = true;
+                }
+            }
+        }
+        //
+    }
 
     private void Start()
     {
@@ -57,10 +77,10 @@ public class QuestPanel : MonoBehaviour
                     if (quest.isActive)
                     {
                         quest.isActive = false;
-                        PlayerData.questID++;
-                        if(PlayerData.questID <= questDatas.quests.Count)
+                        questID++;
+                        if(questID <= questDatas.quests.Count)
                         {
-                            questDatas.quests[PlayerData.questID].isActive = true;
+                            questDatas.quests[questID].isActive = true;
                             NewQuest();
                             break;
                         }

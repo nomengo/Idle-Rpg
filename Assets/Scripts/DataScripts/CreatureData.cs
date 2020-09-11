@@ -19,5 +19,4 @@ public class CreatureData
     public float howMuchEnergyNeededForOneTime;
     public float howMuchHealthNeededForOneTime;
     public float howMuchExperienceDoesOneGonnaGet;
-
 }

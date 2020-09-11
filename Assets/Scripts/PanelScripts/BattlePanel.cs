@@ -24,14 +24,17 @@ public class BattlePanel : MonoBehaviour
 
     private Inventory inventory;
     private BarManager _barManager;
+    private QuestGoal questGoal;
 
     private bool isTheBattleCompleted;
 
     private int Reward;
+    private int receivedCreatureID;
 
     private void Start()
     {
         waitTime = 1f;
+        questGoal = FindObjectOfType<QuestGoal>();
         _barManager = FindObjectOfType<BarManager>();
         inventory = FindObjectOfType<Inventory>();
     }
@@ -43,6 +46,7 @@ public class BattlePanel : MonoBehaviour
             if(creature.CreatureID == id)
             {
 
+                receivedCreatureID = id;
                 Reward = creature.rewardForCreature;
                 Experience = creature.howMuchExperienceDoesOneGonnaGet;
 
@@ -67,7 +71,6 @@ public class BattlePanel : MonoBehaviour
     {
         if (!isTheBattleCompleted)
         {
-
             StartCoroutine(BattleCo());
         }
     }
@@ -82,7 +85,7 @@ public class BattlePanel : MonoBehaviour
                 {
                     if(MonsterHealth > 0 && _barManager.healthBar.GetComponent<Image>().fillAmount > 0)
                     {
-                        //Her iki tarafında canı varken
+                        //Both sides are healthy
                         if (i % 2 == 0)
                         {
                             float gDamage =   MonsterArmor - inventory.itemDamage;
@@ -93,7 +96,7 @@ public class BattlePanel : MonoBehaviour
                             }
                             else
                             {
-                                MonsterHealth = MonsterHealth - gDamage;
+                                //Given zero damage
                             }
                             //Debug.Log(MonsterHealth);
                             BattleText.text = MonsterHealth.ToString("0");
@@ -101,7 +104,7 @@ public class BattlePanel : MonoBehaviour
                         }
                         else if (i % 2 == 1)
                         {
-                            float tDamage = MonsterDamage - inventory.itemArmor;
+                            float tDamage = inventory.itemArmor - MonsterDamage;
                             if (tDamage <= 0)
                             {
                                 tDamage = -tDamage;
@@ -111,26 +114,26 @@ public class BattlePanel : MonoBehaviour
                             }
                             else
                             {
-                                _barManager.HealthDecrease(tDamage);
-                                _barManager.EnergyDecrease(RequiredEnergyForKilling);
-                                BattleText.text = tDamage.ToString("0") + " Damage aldın!";
+                                //Take no damage
                             }
                             yield return new WaitForSeconds(waitTime);
                         }
                     }
                     else if(MonsterHealth <= 0)
                     {
-                        //Düşman öldüyse
+                        //if enemy dies
                         BattleText.text = "YOU WİN!!";
                         _barManager.GiveMeTheMoney(Reward);
                         _barManager.GetExperience(Experience);
+                        //Take and send creature's id to QuestGoal for confirmation
+                        questGoal.QuestProgress(receivedCreatureID);
                         yield return new WaitForSeconds(waitTime);
                         BattleText.text = "";
                         break;
                     }
                     else if(_barManager.healthBar.GetComponent<Image>().fillAmount == 0)
                     {
-                        //Sen öldüysen
+                        //if you die
                         BattleText.text = "YOU LOSE!!";
                         yield return new WaitForSeconds(waitTime);
                         BattleText.text = "";
@@ -147,5 +150,6 @@ public class BattlePanel : MonoBehaviour
             }
             yield return null;
         }
+        isTheBattleCompleted = true;
     }
 }

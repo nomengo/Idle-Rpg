@@ -222,6 +222,7 @@ MonoBehaviour:
   descriptionText: {fileID: 29149765}
   rewardText: {fileID: 2015503419}
   experienceText: {fileID: 1735358345}
+  questID: 0
 --- !u!1 &29149763
 GameObject:
   m_ObjectHideFlags: 0
@@ -6490,6 +6491,7 @@ MonoBehaviour:
     money: 0
     experience: 0
     questID: 0
+    requiredCreatureID: 0
 --- !u!1 &1165551876
 GameObject:
   m_ObjectHideFlags: 0

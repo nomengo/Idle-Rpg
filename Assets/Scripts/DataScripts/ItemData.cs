@@ -11,9 +11,13 @@ public enum ItemType { Weapon, Armor, Consumable, Default };
 public class ItemData
 {
     public ItemType itemType;
+
     public string itemName;
-    public int itemPrice;
     public string itemDescription;
+
+    public int itemPrice;
+    //public int itemUpgradeAmount;
+
     public Sprite itemImage;
 
     public float itemDamage;

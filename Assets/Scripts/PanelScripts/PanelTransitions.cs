@@ -14,6 +14,7 @@ public class PanelTransitions : MonoBehaviour
     public GameObject MainUpPan;
     public GameObject QuestPan;
     public GameObject BattlePan;
+    public GameObject BlacksmithPan;
 
     public void GoToMainPanel()
     {
@@ -24,6 +25,7 @@ public class PanelTransitions : MonoBehaviour
         MainUpPan.SetActive(true);
         GuildPan.SetActive(false);
         CreaturePan.SetActive(false);
+        BlacksmithPan.SetActive(false);
         MainDownPan.SetActive(true);
         
     }
@@ -51,5 +53,11 @@ public class PanelTransitions : MonoBehaviour
     {
         MainDownPan.SetActive(false);
         GuildPan.SetActive(true);
+    }
+
+    public void GoToBlacksmithPanel()
+    {
+        MainDownPan.SetActive(false);
+        BlacksmithPan.SetActive(true);
     }
 }

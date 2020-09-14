@@ -15,15 +15,17 @@ MonoBehaviour:
   itemDatas:
   - itemType: 0
     itemName: anan
-    itemPrice: 500
     itemDescription: "ananc\u0131 silah\u0131"
+    itemPrice: 500
+    itemUpgradeAmount: 3
     itemImage: {fileID: 21300000, guid: 2df007ebe243018469daeca64d8a1676, type: 3}
     itemDamage: 10
     itemArmor: 0
   - itemType: 1
     itemName: nomen
-    itemPrice: 500
     itemDescription: "uzak diyarlar\u0131n kadim savunma silah\u0131"
+    itemPrice: 500
+    itemUpgradeAmount: 3
     itemImage: {fileID: 21300000, guid: ed0f15d461e0f3f478ffd8f0ece08e3c, type: 3}
     itemDamage: 0
     itemArmor: 15

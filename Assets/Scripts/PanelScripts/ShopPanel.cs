@@ -68,10 +68,17 @@ public class ShopPanel : MonoBehaviour
 
     public void BuyItem(ItemData itemData)
     {
-        barManager.TakeMyMoney(itemData.itemPrice);
-        inventory.ItemPickUp(itemData);
-        itemDamagePlace.SetActive(false);
-        itemArmorPlace.SetActive(false);
-        itemInfoPan.SetActive(false);
+        if(PlayerData.money >= itemData.itemPrice)
+        {
+            barManager.TakeMyMoney(itemData.itemPrice);
+            inventory.ItemPickUp(itemData);
+            itemDamagePlace.SetActive(false);
+            itemArmorPlace.SetActive(false);
+            itemInfoPan.SetActive(false);
+        }
+        else
+        {
+            //Do nothing
+        }
     }
 }

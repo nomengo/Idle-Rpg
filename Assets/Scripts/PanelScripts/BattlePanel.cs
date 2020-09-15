@@ -25,6 +25,7 @@ public class BattlePanel : MonoBehaviour
     private Inventory inventory;
     private BarManager _barManager;
     private QuestGoal questGoal;
+    private PanelTransitions panelTransitions;
 
     private bool isTheBattleCompleted;
 
@@ -33,10 +34,11 @@ public class BattlePanel : MonoBehaviour
 
     private void Start()
     {
-        waitTime = 1f;
+        waitTime = 1f;//Remember to always check waitTime for if it's 0 or not 
         questGoal = FindObjectOfType<QuestGoal>();
         _barManager = FindObjectOfType<BarManager>();
         inventory = FindObjectOfType<Inventory>();
+        panelTransitions = FindObjectOfType<PanelTransitions>();
     }
 
     public void ReceiveId(int id)
@@ -69,9 +71,25 @@ public class BattlePanel : MonoBehaviour
 
     public void Battle()
     {
-        if (!isTheBattleCompleted)
+       StartCoroutine(BattleCo());
+    }
+
+    private float CalculateTheDamages(float armor , float damage)
+    {
+        if(armor > damage)
         {
-            StartCoroutine(BattleCo());
+            return 0;
+            //Do nothing... maybe later
+        }
+        else if(armor==damage)
+        {
+            return 0;
+            //Do nothing... maybe later
+        }
+        else
+        {
+            damage -= armor;
+            return damage;
         }
     }
 
@@ -79,77 +97,71 @@ public class BattlePanel : MonoBehaviour
     {
         while (true)
         {
-            if(inventory.itemDamage > 0 && inventory.itemArmor > 0)
+            if (!isTheBattleCompleted)
             {
-                for (int i = 1; i < 9999; i++)
+                if (inventory.itemDamage > 0 && inventory.itemArmor > 0)
                 {
-                    if(MonsterHealth > 0 && _barManager.healthBar.GetComponent<Image>().fillAmount > 0)
+                    for (int i = 1; i < 9; i++)
                     {
-                        //Both sides are healthy
-                        if (i % 2 == 0)
+                        if (MonsterHealth > 0 && _barManager.healthBar.GetComponent<Image>().fillAmount > 0)
                         {
-                            float gDamage =   MonsterArmor - inventory.itemDamage;
-                            if(gDamage < 0)
+                            //Both sides are healthy
+                            if (i % 2 == 0)
                             {
-                                gDamage = -gDamage;
-                                MonsterHealth = MonsterHealth - gDamage;
+                                float gDamage = CalculateTheDamages(MonsterArmor, inventory.itemDamage);
+                                MonsterHealth -= gDamage;
+                                //Debug.Log(MonsterHealth);
+                                BattleText.text = MonsterHealth.ToString("0");
+                                yield return new WaitForSeconds(waitTime);
                             }
-                            else
+                            else if (i % 2 == 1)
                             {
-                                //Given zero damage
-                            }
-                            //Debug.Log(MonsterHealth);
-                            BattleText.text = MonsterHealth.ToString("0");
-                            yield return new WaitForSeconds(waitTime);
-                        }
-                        else if (i % 2 == 1)
-                        {
-                            float tDamage = inventory.itemArmor - MonsterDamage;
-                            if (tDamage <= 0)
-                            {
-                                tDamage = -tDamage;
+                                float tDamage = CalculateTheDamages(inventory.itemArmor, MonsterDamage);
                                 _barManager.HealthDecrease(tDamage);
                                 _barManager.EnergyDecrease(RequiredEnergyForKilling);
                                 BattleText.text = tDamage.ToString("0") + " Damage aldın!";
+                                yield return new WaitForSeconds(waitTime);
                             }
-                            else
-                            {
-                                //Take no damage
-                            }
+                        }
+                        else if (MonsterHealth <= 0)
+                        {
+                            //if enemy dies
+                            BattleText.text = "YOU WİN!!";
+                            _barManager.GiveMeTheMoney(Reward);
+                            _barManager.GetExperience(Experience);
+                            //Take and send creature's id to QuestGoal for confirmation
+                            questGoal.QuestProgress(receivedCreatureID);
                             yield return new WaitForSeconds(waitTime);
+                            BattleText.text = "";
+                            isTheBattleCompleted = true;
+                            break;
+                        }
+                        else if (_barManager.healthBar.GetComponent<Image>().fillAmount == 0)
+                        {
+                            //if you die
+                            BattleText.text = "YOU LOSE!!";
+                            yield return new WaitForSeconds(waitTime);
+                            BattleText.text = "";
+                            isTheBattleCompleted = true;
+                            break;
                         }
                     }
-                    else if(MonsterHealth <= 0)
-                    {
-                        //if enemy dies
-                        BattleText.text = "YOU WİN!!";
-                        _barManager.GiveMeTheMoney(Reward);
-                        _barManager.GetExperience(Experience);
-                        //Take and send creature's id to QuestGoal for confirmation
-                        questGoal.QuestProgress(receivedCreatureID);
-                        yield return new WaitForSeconds(waitTime);
-                        BattleText.text = "";
-                        break;
-                    }
-                    else if(_barManager.healthBar.GetComponent<Image>().fillAmount == 0)
-                    {
-                        //if you die
-                        BattleText.text = "YOU LOSE!!";
-                        yield return new WaitForSeconds(waitTime);
-                        BattleText.text = "";
-                        break;
-                    }
+                }
+                else
+                {
+                    BattleText.text = "You Need Both Weapon And Armor!!!";
+                    yield return new WaitForSeconds(waitTime);
+                    BattleText.text = "";
+                    break;
                 }
             }
             else
             {
-                BattleText.text = "You Need Both Weapon And Armor!!!";
-                yield return new WaitForSeconds(waitTime);
-                BattleText.text = "";
+                isTheBattleCompleted = false;
+                panelTransitions.GoToHuntingPanel();
                 break;
             }
             yield return null;
         }
-        isTheBattleCompleted = true;
     }
 }

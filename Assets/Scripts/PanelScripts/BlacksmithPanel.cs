@@ -7,30 +7,17 @@ public class BlacksmithPanel : MonoBehaviour
 {
     [SerializeField] private GameObject WeaponUpgrade;
     [SerializeField] private GameObject ArmorUpgrade;
-    [SerializeField] private GameObject NoItemsPlace;
 
     private Inventory _inventory;
-    private void Awake()
-    {
-        _inventory = FindObjectOfType<Inventory>();
-    }
-
     private void Start()
     {
-        StartCoroutine(CheckCo());
+        _inventory = FindObjectOfType<Inventory>();
+        StartCoroutine(GetReadyCo());
     }
 
-    private IEnumerator CheckCo()
+    private IEnumerator GetReadyCo()
     {
-        if (_inventory.itemDamage == 0 && _inventory.itemArmor == 0)
-        {
-            NoItemsPlace.SetActive(true);
-        }
-        else
-        {
-            NoItemsPlace.SetActive(false);
-            GetReady();
-        }
+        GetReady();
         yield return new WaitForSeconds(1f);
     }
 
@@ -48,11 +35,19 @@ public class BlacksmithPanel : MonoBehaviour
         {
             ArmorUpgrade.transform.GetChild(4).GetComponent<Image>().sprite = _inventory.armorHolder.GetComponent<HolderData>().itemData.itemImage;
             UpgradeArmor(_inventory.armorHolder.GetComponent<HolderData>().itemData);
+            WeaponUpgrade.transform.GetChild(1).GetComponent<Text>().text = "YOU DON'T HAVE A WEAPON!";
         }
         else if (_inventory.itemDamage != 0)
         {
             WeaponUpgrade.transform.GetChild(4).GetComponent<Image>().sprite = _inventory.weaponHolder.GetComponent<HolderData>().itemData.itemImage;
             UpgradeWeapon(_inventory.weaponHolder.GetComponent<HolderData>().itemData);
+            WeaponUpgrade.transform.GetChild(1).GetComponent<Text>().text = "YOU DON'T HAVE A ARMOR!";
+
+        }
+        else
+        {
+            WeaponUpgrade.transform.GetChild(1).GetComponent<Text>().text = "YOU DON'T HAVE A ARMOR!";
+            ArmorUpgrade.transform.GetChild(1).GetComponent<Text>().text = "YOU DON'T HAVE A WEAPON";
         }
     }
 
@@ -72,6 +67,7 @@ public class BlacksmithPanel : MonoBehaviour
         {
             _inventory.itemDamage += 1f;
             PlayerData.money -= gItem.itemPrice;
+            Debug.Log(PlayerData.money);
             Debug.Log("You Upgraded Your Weapon!!!");
         }
     }
@@ -82,6 +78,7 @@ public class BlacksmithPanel : MonoBehaviour
         {
             _inventory.itemArmor += 1f;
             PlayerData.money -= gItem.itemPrice;
+            Debug.Log(PlayerData.money);
             Debug.Log("You Upgraded Your Armor!!!");
         }
     }

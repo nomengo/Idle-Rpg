@@ -18,13 +18,13 @@ MonoBehaviour:
     creatureLevel: 1
     rewardForCreature: 1
     CreatureID: 0
-    creatureHealth: 20
+    creatureHealth: 10
     creatureArmor: 1
     howMuchEnergyNeededForOneTime: 0.001
     howMuchHealthNeededForOneTime: 0
-    howMuchExperienceDoesOneGonnaGet: 0.0001
+    howMuchExperienceDoesOneGonnaGet: 1
   - creatureName: GreenSlime
-    creatureDescription: 
+    creatureDescription: 'Basic slime '
     creatureLevel: 2
     rewardForCreature: 5
     CreatureID: 1
@@ -32,84 +32,64 @@ MonoBehaviour:
     creatureArmor: 5
     howMuchEnergyNeededForOneTime: 0.001
     howMuchHealthNeededForOneTime: 0.001
-    howMuchExperienceDoesOneGonnaGet: 0.0015
+    howMuchExperienceDoesOneGonnaGet: 1.5
   - creatureName: BlueSlime
-    creatureDescription: 
+    creatureDescription: Basic slime but more powerfull
     creatureLevel: 2
     rewardForCreature: 6
     CreatureID: 2
-    creatureHealth: 0
-    creatureArmor: 0
+    creatureHealth: 20
+    creatureArmor: 10
     howMuchEnergyNeededForOneTime: 0.0011
     howMuchHealthNeededForOneTime: 0.0012
-    howMuchExperienceDoesOneGonnaGet: 0.002
+    howMuchExperienceDoesOneGonnaGet: 2
   - creatureName: Goblin
-    creatureDescription: 
+    creatureDescription: One goblin can't to anything to you
     creatureLevel: 3
     rewardForCreature: 10
     CreatureID: 3
-    creatureHealth: 0
-    creatureArmor: 0
+    creatureHealth: 30
+    creatureArmor: 10
     howMuchEnergyNeededForOneTime: 0.002
     howMuchHealthNeededForOneTime: 0.002
-    howMuchExperienceDoesOneGonnaGet: 0.003
+    howMuchExperienceDoesOneGonnaGet: 3.5
   - creatureName: Kobold
-    creatureDescription: 
+    creatureDescription: Kobolds are basically beast warriors
     creatureLevel: 5
     rewardForCreature: 50
     CreatureID: 4
-    creatureHealth: 0
-    creatureArmor: 0
+    creatureHealth: 100
+    creatureArmor: 50
     howMuchEnergyNeededForOneTime: 0.005
     howMuchHealthNeededForOneTime: 0.005
-    howMuchExperienceDoesOneGonnaGet: 0.006
+    howMuchExperienceDoesOneGonnaGet: 5
   - creatureName: BrickLord
-    creatureDescription: 
+    creatureDescription: Lord of all Bricks , mighty mysterious brick
     creatureLevel: 5
     rewardForCreature: 60
     CreatureID: 5
-    creatureHealth: 500
-    creatureArmor: 50
+    creatureHealth: 200
+    creatureArmor: 60
     howMuchEnergyNeededForOneTime: 0.006
-    howMuchHealthNeededForOneTime: 0.6
-    howMuchExperienceDoesOneGonnaGet: 0.009
+    howMuchHealthNeededForOneTime: 0.007
+    howMuchExperienceDoesOneGonnaGet: 5.5
   - creatureName: NormalZombie
-    creatureDescription: 
+    creatureDescription: An undead of once an living creature
     creatureLevel: 8
-    rewardForCreature: 100
+    rewardForCreature: 200
     CreatureID: 6
-    creatureHealth: 0
-    creatureArmor: 0
+    creatureHealth: 500
+    creatureArmor: 200
     howMuchEnergyNeededForOneTime: 0.01
     howMuchHealthNeededForOneTime: 0.01
-    howMuchExperienceDoesOneGonnaGet: 0.015
+    howMuchExperienceDoesOneGonnaGet: 8
   - creatureName: Skeleton
-    creatureDescription: 
-    creatureLevel: 200
-    rewardForCreature: 5000
+    creatureDescription: An magical undead
+    creatureLevel: 10
+    rewardForCreature: 500
     CreatureID: 7
-    creatureHealth: 3000
-    creatureArmor: 500
-    howMuchEnergyNeededForOneTime: 10
-    howMuchHealthNeededForOneTime: 10
-    howMuchExperienceDoesOneGonnaGet: 1
-  - creatureName: 
-    creatureDescription: 
-    creatureLevel: 0
-    rewardForCreature: 0
-    CreatureID: 8
-    creatureHealth: 0
-    creatureArmor: 0
-    howMuchEnergyNeededForOneTime: 0
-    howMuchHealthNeededForOneTime: 0
-    howMuchExperienceDoesOneGonnaGet: 0
-  - creatureName: 
-    creatureDescription: 
-    creatureLevel: 0
-    rewardForCreature: 0
-    CreatureID: 9
-    creatureHealth: 0
-    creatureArmor: 0
-    howMuchEnergyNeededForOneTime: 0
-    howMuchHealthNeededForOneTime: 0
-    howMuchExperienceDoesOneGonnaGet: 0
+    creatureHealth: 800
+    creatureArmor: 300
+    howMuchEnergyNeededForOneTime: 0.025
+    howMuchHealthNeededForOneTime: 0.025
+    howMuchExperienceDoesOneGonnaGet: 10

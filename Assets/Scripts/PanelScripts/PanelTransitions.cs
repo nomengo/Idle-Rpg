@@ -39,6 +39,7 @@ public class PanelTransitions : MonoBehaviour
     public void GoToHuntingPanel()
     {
         MainDownPan.SetActive(false);
+        BattlePan.SetActive(false);
         CreaturePan.SetActive(true);
     }
 

@@ -78,7 +78,14 @@ public class ShopPanel : MonoBehaviour
         }
         else
         {
-            //Do nothing
+            StartCoroutine(GoForTextChange());
         }
+    }
+
+    private IEnumerator GoForTextChange()
+    {
+        itemInfoPan.transform.GetChild(0).GetChild(1).Find("BuyButton").GetChild(0).GetComponent<Text>().text = "NO CASH!";
+        yield return new WaitForSeconds(1f);
+        itemInfoPan.transform.GetChild(0).GetChild(1).Find("BuyButton").GetChild(0).GetComponent<Text>().text = "BUY";
     }
 }

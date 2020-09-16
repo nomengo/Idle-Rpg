@@ -504,6 +504,7 @@ MonoBehaviour:
     itemName: 
     itemDescription: 
     itemPrice: 0
+    itemID: 0
     itemImage: {fileID: 0}
     itemDamage: 0
     itemArmor: 0
@@ -5618,6 +5619,7 @@ MonoBehaviour:
     itemName: 
     itemDescription: 
     itemPrice: 0
+    itemID: 0
     itemImage: {fileID: 0}
     itemDamage: 0
     itemArmor: 0
@@ -7963,6 +7965,7 @@ MonoBehaviour:
     itemName: 
     itemDescription: 
     itemPrice: 0
+    itemID: 0
     itemImage: {fileID: 0}
     itemDamage: 0
     itemArmor: 0
@@ -8937,6 +8940,7 @@ MonoBehaviour:
     itemName: 
     itemDescription: 
     itemPrice: 0
+    itemID: 0
     itemImage: {fileID: 0}
     itemDamage: 0
     itemArmor: 0

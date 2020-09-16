@@ -76,20 +76,21 @@ public class BattlePanel : MonoBehaviour
 
     private float CalculateTheDamages(float armor , float damage)
     {
-        if(armor > damage)
+        float dam = Random.Range(damage, (damage + 6));
+        if(armor > dam)
         {
             return 0;
             //Do nothing... maybe later
         }
-        else if(armor==damage)
+        else if(armor==dam)
         {
             return 0;
             //Do nothing... maybe later
         }
         else
         {
-            damage -= armor;
-            return damage;
+            dam -= armor;
+            return dam;
         }
     }
 

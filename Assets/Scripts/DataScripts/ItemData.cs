@@ -16,6 +16,7 @@ public class ItemData
     public string itemDescription;
 
     public int itemPrice;
+    public int itemID;
     //public int itemUpgradeAmount;
 
     public Sprite itemImage;

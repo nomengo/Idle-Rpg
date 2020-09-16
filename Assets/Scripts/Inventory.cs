@@ -47,6 +47,7 @@ public class Inventory : MonoBehaviour
         weaponHolder.GetComponent<HolderData>().itemData.itemName = itemData.itemName;
         weaponHolder.GetComponent<HolderData>().itemData.itemDamage = itemData.itemDamage;
         weaponHolder.GetComponent<HolderData>().itemData.itemImage = itemData.itemImage;
+        //PlayerData.itemDam = itemData.itemDamage;
         itemDamage = itemData.itemDamage;
     }
 
@@ -56,6 +57,7 @@ public class Inventory : MonoBehaviour
         armorHolder.GetComponent<HolderData>().itemData.itemName = itemData.itemName;
         armorHolder.GetComponent<HolderData>().itemData.itemArmor = itemData.itemArmor;
         armorHolder.GetComponent<HolderData>().itemData.itemImage = itemData.itemImage;
+        //PlayerData.itemArm = itemData.itemArmor;
         itemArmor = itemData.itemArmor;
     }
 }

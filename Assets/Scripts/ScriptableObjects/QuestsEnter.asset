@@ -16,18 +16,30 @@ MonoBehaviour:
   - questType: 0
     isActive: 1
     isDone: 0
-    questTitle: Into the anan(Part1)
-    questDescription: anan ve baban
+    questTitle: Introduction
+    questDescription: Kill a brick to complete quest
     money: 100
     experience: 15
     questID: 0
     requiredCreatureID: 0
+    idThatWeNeededMost: 1
   - questType: 0
     isActive: 0
     isDone: 0
-    questTitle: Into the anan(Part2)
-    questDescription: zaaaaa ve ananan
+    questTitle: Beginning(Part1)
+    questDescription: 'Kill a normal slime '
     money: 200
     experience: 30
     questID: 1
     requiredCreatureID: 1
+    idThatWeNeededMost: 2
+  - questType: 0
+    isActive: 0
+    isDone: 0
+    questTitle: Beginning(Part2)
+    questDescription: Kill another normal slime
+    money: 200
+    experience: 30
+    questID: 2
+    requiredCreatureID: 1
+    idThatWeNeededMost: 3

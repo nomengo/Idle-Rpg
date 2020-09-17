@@ -30,8 +30,8 @@ MonoBehaviour:
     CreatureID: 1
     creatureHealth: 10
     creatureArmor: 5
-    howMuchEnergyNeededForOneTime: 0.001
-    howMuchHealthNeededForOneTime: 0.001
+    howMuchEnergyNeededForOneTime: 0.1
+    howMuchHealthNeededForOneTime: 0.1
     howMuchExperienceDoesOneGonnaGet: 1.5
   - creatureName: BlueSlime
     creatureDescription: Basic slime but more powerfull
@@ -40,8 +40,8 @@ MonoBehaviour:
     CreatureID: 2
     creatureHealth: 20
     creatureArmor: 10
-    howMuchEnergyNeededForOneTime: 0.0011
-    howMuchHealthNeededForOneTime: 0.0012
+    howMuchEnergyNeededForOneTime: 0.15
+    howMuchHealthNeededForOneTime: 0.2
     howMuchExperienceDoesOneGonnaGet: 2
   - creatureName: Goblin
     creatureDescription: One goblin can't to anything to you
@@ -50,8 +50,8 @@ MonoBehaviour:
     CreatureID: 3
     creatureHealth: 30
     creatureArmor: 10
-    howMuchEnergyNeededForOneTime: 0.002
-    howMuchHealthNeededForOneTime: 0.002
+    howMuchEnergyNeededForOneTime: 0.3
+    howMuchHealthNeededForOneTime: 0.3
     howMuchExperienceDoesOneGonnaGet: 3.5
   - creatureName: Kobold
     creatureDescription: Kobolds are basically beast warriors
@@ -60,8 +60,8 @@ MonoBehaviour:
     CreatureID: 4
     creatureHealth: 100
     creatureArmor: 50
-    howMuchEnergyNeededForOneTime: 0.005
-    howMuchHealthNeededForOneTime: 0.005
+    howMuchEnergyNeededForOneTime: 0.3
+    howMuchHealthNeededForOneTime: 0.35
     howMuchExperienceDoesOneGonnaGet: 5
   - creatureName: BrickLord
     creatureDescription: Lord of all Bricks , mighty mysterious brick
@@ -70,8 +70,8 @@ MonoBehaviour:
     CreatureID: 5
     creatureHealth: 200
     creatureArmor: 60
-    howMuchEnergyNeededForOneTime: 0.006
-    howMuchHealthNeededForOneTime: 0.007
+    howMuchEnergyNeededForOneTime: 0.4
+    howMuchHealthNeededForOneTime: 0.45
     howMuchExperienceDoesOneGonnaGet: 5.5
   - creatureName: NormalZombie
     creatureDescription: An undead of once an living creature
@@ -80,8 +80,8 @@ MonoBehaviour:
     CreatureID: 6
     creatureHealth: 500
     creatureArmor: 200
-    howMuchEnergyNeededForOneTime: 0.01
-    howMuchHealthNeededForOneTime: 0.01
+    howMuchEnergyNeededForOneTime: 0.6
+    howMuchHealthNeededForOneTime: 0.6
     howMuchExperienceDoesOneGonnaGet: 8
   - creatureName: Skeleton
     creatureDescription: An magical undead
@@ -90,6 +90,6 @@ MonoBehaviour:
     CreatureID: 7
     creatureHealth: 800
     creatureArmor: 300
-    howMuchEnergyNeededForOneTime: 0.025
-    howMuchHealthNeededForOneTime: 0.025
+    howMuchEnergyNeededForOneTime: 0.7
+    howMuchHealthNeededForOneTime: 0.75
     howMuchExperienceDoesOneGonnaGet: 10

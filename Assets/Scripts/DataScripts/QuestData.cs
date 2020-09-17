@@ -25,4 +25,5 @@ public class QuestData
     public int experience;
     public int questID;
     public int requiredCreatureID;
+    public int idThatWeNeededMost;
 }

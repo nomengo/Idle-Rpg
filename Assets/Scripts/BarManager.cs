@@ -27,12 +27,12 @@ public class BarManager : MonoBehaviour
 
     public void HealthDecrease(float damage)
     {
-        healthBar.GetComponent<Image>().fillAmount -= damage;
+        healthBar.GetComponent<Image>().fillAmount -= damage / PlayerData.level;
     }
 
     public void EnergyDecrease(float amount)
     {
-        energyBar.GetComponent<Image>().fillAmount -= amount;
+        energyBar.GetComponent<Image>().fillAmount -= amount / PlayerData.level;
     }
 
     public void GiveMeTheMoney(int money)
@@ -61,12 +61,12 @@ public class BarManager : MonoBehaviour
     {
         while (true)
         {
-            if (energyBar.GetComponent<Image>().fillAmount == 0)
+            if (energyBar.GetComponent<Image>().fillAmount != 1)
             {
                 yield return new WaitForSeconds(waitingTime);
                 energyBar.GetComponent<Image>().fillAmount += 0.0001f;
             }
-            if (healthBar.GetComponent<Image>().fillAmount == 0)
+            if (healthBar.GetComponent<Image>().fillAmount != 1)
             {
                 yield return new WaitForSeconds(waitingTime);
                 healthBar.GetComponent<Image>().fillAmount += 0.0001f;

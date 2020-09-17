@@ -8,10 +8,12 @@ public class QuestPanel : MonoBehaviour
     [SerializeField] private QuestDataList questDatas;
     [SerializeField] private QuestGoal questGoal;
 
-    public Text titleText;
-    public Text descriptionText;
-    public Text rewardText;
-    public Text experienceText;
+    [SerializeField] private Text titleText;
+    [SerializeField] private Text descriptionText;
+    [SerializeField] private Text rewardText;
+    [SerializeField] private Text experienceText;
+    [SerializeField] private Text isQuestTakenText;
+    [SerializeField] private Text isQuestDoneText;
 
     public int questID = 0;
 
@@ -24,11 +26,22 @@ public class QuestPanel : MonoBehaviour
             {
                 if (fQuest.isActive == true)
                 {
-                    //do nothing
+                    //Do nothing
                 }
                 else
                 {
                     fQuest.isActive = true;
+                }
+            }
+            else if(fQuest.questID != 0)
+            {
+                if(fQuest.isActive == true)
+                {
+                    fQuest.isActive = false;
+                }
+                else
+                {
+                    //Do nothing
                 }
             }
         }
@@ -45,8 +58,21 @@ public class QuestPanel : MonoBehaviour
                 descriptionText.text = quest.questDescription;
                 rewardText.text = quest.money.ToString("0");
                 experienceText.text = quest.experience.ToString("0");
+                isQuestTakenText.text = "Quest is not taken yet!";
             }
         }
+    }
+
+    private void Update()
+    {
+        //if (questGoal.quest.isDone)
+        //{
+        //    isQuestDoneText.text = "Quest is done!";
+        //}
+        //else
+        //{
+
+        //}
     }
 
     public void TakeQuest()
@@ -55,12 +81,24 @@ public class QuestPanel : MonoBehaviour
         {
             if (quest.isActive)
             {
-                questGoal.quest.isActive = quest.isActive;
-                questGoal.quest.questTitle = quest.questTitle;
-                questGoal.quest.questDescription = quest.questDescription;
-                questGoal.quest.money = quest.money;
-                questGoal.quest.experience = quest.experience;
-                questGoal.quest.questID = quest.questID;
+                //The reason why are we doing this because we dont wanna take the quest again when we already took it
+                if (questGoal.quest.idThatWeNeededMost==quest.idThatWeNeededMost)
+                {
+                    Debug.Log("It's working!!!");
+                }
+                else
+                {
+                    Debug.Log("Here it is!!");
+                    questGoal.quest.isActive = quest.isActive;
+                    questGoal.quest.questTitle = quest.questTitle;
+                    questGoal.quest.questDescription = quest.questDescription;
+                    questGoal.quest.money = quest.money;
+                    questGoal.quest.experience = quest.experience;
+                    questGoal.quest.questID = quest.questID;
+                    questGoal.quest.requiredCreatureID = quest.requiredCreatureID;
+                    questGoal.quest.idThatWeNeededMost = quest.idThatWeNeededMost;
+                    isQuestTakenText.text = "Quest is taken!";
+                }
             }
         }
     }
@@ -82,10 +120,15 @@ public class QuestPanel : MonoBehaviour
                         {
                             questDatas.quests[questID].isActive = true;
                             NewQuest();
+                            isQuestTakenText.text = "Quest is not taken yet!";
                             break;
                         }
                     }
                 }
+            }
+            else
+            {
+                isQuestDoneText.text = "Quest is not done yet!";
             }
         }
     }

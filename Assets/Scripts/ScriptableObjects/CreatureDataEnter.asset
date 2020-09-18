@@ -93,3 +93,23 @@ MonoBehaviour:
     howMuchEnergyNeededForOneTime: 0.7
     howMuchHealthNeededForOneTime: 0.75
     howMuchExperienceDoesOneGonnaGet: 10
+  - creatureName: Ghoul
+    creatureDescription: Crazy cannibal creatures
+    creatureLevel: 15
+    rewardForCreature: 1000
+    CreatureID: 8
+    creatureHealth: 1300
+    creatureArmor: 500
+    howMuchEnergyNeededForOneTime: 1
+    howMuchHealthNeededForOneTime: 1.2
+    howMuchExperienceDoesOneGonnaGet: 20
+  - creatureName: GreaSkeleton
+    creatureDescription: More powerful skeleton , get ready
+    creatureLevel: 25
+    rewardForCreature: 3000
+    CreatureID: 9
+    creatureHealth: 2600
+    creatureArmor: 1000
+    howMuchEnergyNeededForOneTime: 5
+    howMuchHealthNeededForOneTime: 6
+    howMuchExperienceDoesOneGonnaGet: 50

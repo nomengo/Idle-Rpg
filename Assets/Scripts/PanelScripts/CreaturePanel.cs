@@ -31,8 +31,8 @@ public class CreaturePanel : MonoBehaviour
             });
             creatureInstance.transform.GetComponent<Button>().onClick.AddListener(()=> BattlePanel.SetActive(true));
 
-            creatureInstance.transform.GetChild(0).GetComponent<Text>().text = item.howMuchExperienceDoesOneGonnaGet.ToString();
-            creatureInstance.transform.GetChild(1).GetComponent<Text>().text = item.rewardForCreature.ToString("0");
+            creatureInstance.transform.GetChild(0).GetComponent<Text>().text = "Exp: " + item.howMuchExperienceDoesOneGonnaGet.ToString();
+            creatureInstance.transform.GetChild(1).GetComponent<Text>().text = "Gain: " + item.rewardForCreature.ToString("0");
             creatureInstance.transform.GetChild(2).GetComponent<Text>().text = "Level: " + item.creatureLevel.ToString("0");
             creatureInstance.transform.GetChild(3).GetComponent<Text>().text = item.creatureName.ToString();
         }

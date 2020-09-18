@@ -64,12 +64,12 @@ public class BarManager : MonoBehaviour
             if (energyBar.GetComponent<Image>().fillAmount != 1)
             {
                 yield return new WaitForSeconds(waitingTime);
-                energyBar.GetComponent<Image>().fillAmount += 0.0001f;
+                energyBar.GetComponent<Image>().fillAmount += 0.1f;
             }
             if (healthBar.GetComponent<Image>().fillAmount != 1)
             {
                 yield return new WaitForSeconds(waitingTime);
-                healthBar.GetComponent<Image>().fillAmount += 0.0001f;
+                healthBar.GetComponent<Image>().fillAmount += 0.1f;
             }
             yield return null;
         }

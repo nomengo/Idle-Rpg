@@ -12,6 +12,9 @@ public class Inventory : MonoBehaviour
     public float itemDamage;
     public float itemArmor;
 
+    public int weaponUpgradeAmount;
+    public int armorUpgradeAmount;
+
    // public bool[] isFull;
 
 
@@ -49,6 +52,7 @@ public class Inventory : MonoBehaviour
         weaponHolder.GetComponent<HolderData>().itemData.itemImage = itemData.itemImage;
         //PlayerData.itemDam = itemData.itemDamage;
         itemDamage = itemData.itemDamage;
+        weaponUpgradeAmount = itemData.itemUpgradeAmount;
     }
 
     private void AllDatasToArmorHolder(ItemData itemData)
@@ -59,5 +63,6 @@ public class Inventory : MonoBehaviour
         armorHolder.GetComponent<HolderData>().itemData.itemImage = itemData.itemImage;
         //PlayerData.itemArm = itemData.itemArmor;
         itemArmor = itemData.itemArmor;
+        armorUpgradeAmount = itemData.itemUpgradeAmount;
     }
 }

@@ -2,19 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class CreaturePanel : MonoBehaviour
 {
     [SerializeField]private GameObject BattlePanel;
 
+    [SerializeField] private BattlePanel battlePanel;
+
+    private PanelTransitions panelTransitions;
+
     public GameObject creaturePrefab;
     public GameObject creatureContainer;
     public CreatureDataList Data;
 
-    [SerializeField] private BattlePanel battlePanel;
 
     void Start()
     {
+        panelTransitions = FindObjectOfType<PanelTransitions>();
         foreach (var item in Data.creatureList)
         {
             GameObject creatureInstance = (GameObject)Instantiate(creaturePrefab);
@@ -29,7 +34,9 @@ public class CreaturePanel : MonoBehaviour
                 int id = ReturnID(item);
                 battlePanel.ReceiveId(id);
             });
-            creatureInstance.transform.GetComponent<Button>().onClick.AddListener(()=> BattlePanel.SetActive(true));
+    
+            creatureInstance.transform.GetComponent<Button>().onClick.AddListener(()=>panelTransitions.GoToBattlePanel());
+
 
             creatureInstance.transform.GetChild(0).GetComponent<Text>().text = "Exp: " + item.howMuchExperienceDoesOneGonnaGet.ToString();
             creatureInstance.transform.GetChild(1).GetComponent<Text>().text = "Gain: " + item.rewardForCreature.ToString("0");

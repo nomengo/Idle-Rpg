@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class ShopPanel : MonoBehaviour
 {
@@ -28,12 +29,13 @@ public class ShopPanel : MonoBehaviour
             itemInstance.transform.Find("ItemButton").GetComponent<Image>().sprite = item.itemImage;
             itemInstance.transform.Find("ItemButton").GetComponent<Button>().onClick.AddListener(() => ItemInfoCall(item));
         }
-
     }
 
     private void ItemInfoCall(ItemData obj)
     {
+        itemInfoPan.transform.position = new Vector3(itemInfoPan.transform.position.x, -500, itemInfoPan.transform.position.z);
         itemInfoPan.SetActive(true);
+        itemInfoPan.GetComponent<RectTransform>().DOAnchorPosY(0, .5f);
         itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(0).Find("NameText").GetComponent<Text>().text = obj.itemName.ToString();
         itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(1).Find("PriceText").GetComponent<Text>().text = obj.itemPrice.ToString("0");
         itemInfoPan.transform.GetChild(0).GetChild(1).GetChild(2).Find("DescriptionText").GetComponent<Text>().text = obj.itemDescription.ToString();
@@ -64,6 +66,7 @@ public class ShopPanel : MonoBehaviour
         itemDamagePlace.SetActive(false);
         itemArmorPlace.SetActive(false);
         itemInfoPan.SetActive(false);
+        
     }
 
     public void BuyItem(ItemData itemData)

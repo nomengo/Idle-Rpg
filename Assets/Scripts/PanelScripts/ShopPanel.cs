@@ -8,6 +8,7 @@ public class ShopPanel : MonoBehaviour
 {
     private Inventory inventory;
     private BarManager barManager;
+    private YourItemsList yourItemsList;
 
     public GameObject itemPrefab;
     public GameObject itemContainer;
@@ -20,6 +21,7 @@ public class ShopPanel : MonoBehaviour
 
     void Start()
     {
+        yourItemsList = FindObjectOfType<YourItemsList>();
         inventory = FindObjectOfType<Inventory>();
         barManager = FindObjectOfType<BarManager>();
         foreach (var item in itemData.itemDatas)
@@ -73,6 +75,7 @@ public class ShopPanel : MonoBehaviour
     {
         if(PlayerData.money >= itemData.itemPrice)
         {
+            yourItemsList.Items.Add(itemData);
             barManager.TakeMyMoney(itemData.itemPrice);
             inventory.ItemPickUp(itemData);
             itemDamagePlace.SetActive(false);

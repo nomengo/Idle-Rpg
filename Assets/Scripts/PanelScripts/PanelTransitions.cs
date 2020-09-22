@@ -15,9 +15,11 @@ public class PanelTransitions : MonoBehaviour
     public GameObject QuestPan;
     public GameObject BattlePan;
     public GameObject BlacksmithPan;
+    public GameObject AllItemsYouHavePan;
 
     public void GoToMainPanel()
     {
+        AllItemsYouHavePan.SetActive(false);
         BattlePan.SetActive(false);
         ShopPan.SetActive(false);
         QuestPan.SetActive(false);
@@ -79,5 +81,12 @@ public class PanelTransitions : MonoBehaviour
         BattlePan.transform.position = new Vector3(BattlePan.transform.position.x, -500, BattlePan.transform.position.z);
         BattlePan.SetActive(true);
         BattlePan.GetComponent<RectTransform>().DOAnchorPosY(0, .5f);
+    }
+
+    public void GoToAllItemsPanel()
+    {
+        MainUpPan.SetActive(false);
+        DownGamePans.SetActive(false);       
+        AllItemsYouHavePan.SetActive(true);
     }
 }

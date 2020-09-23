@@ -16,19 +16,17 @@ public class CreaturePanel : MonoBehaviour
     public GameObject creatureContainer;
     public CreatureDataList Data;
 
+    private void Awake()
+    {
+        panelTransitions = FindObjectOfType<PanelTransitions>();
+    }
 
     void Start()
     {
-        panelTransitions = FindObjectOfType<PanelTransitions>();
         foreach (var item in Data.creatureList)
         {
             GameObject creatureInstance = (GameObject)Instantiate(creaturePrefab);
             creatureInstance.transform.SetParent(creatureContainer.transform, false);
-
-            //creatureInstance.transform.GetComponent<Button>().onClick.AddListener(()=> { FindObjectOfType<BarManager>().GetExperience(item.howMuchExperienceDoesOneGonnaGet); });
-            //creatureInstance.transform.GetComponent<Button>().onClick.AddListener(() => { FindObjectOfType<BarManager>().HealthDecrease(item.howMuchHealthNeededForOneTime); });
-            //creatureInstance.transform.GetComponent<Button>().onClick.AddListener(() => { FindObjectOfType<BarManager>().EnergyDecrease(item.howMuchEnergyNeededForOneTime); });
-            //creatureInstance.transform.GetComponent<Button>().onClick.AddListener(() => { FindObjectOfType<BarManager>().GiveMeTheMoney(item.rewardForCreature); });
 
             creatureInstance.transform.GetComponent<Button>().onClick.AddListener(() => {
                 int id = ReturnID(item);

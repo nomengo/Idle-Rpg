@@ -32,13 +32,17 @@ public class BattlePanel : MonoBehaviour
     private int Reward;
     private int receivedCreatureID;
 
-    private void Start()
+    private void Awake()
     {
-        waitTime = 1f;//Remember to always check waitTime for if it's 0 or not 
         questGoal = FindObjectOfType<QuestGoal>();
         _barManager = FindObjectOfType<BarManager>();
         inventory = FindObjectOfType<Inventory>();
         panelTransitions = FindObjectOfType<PanelTransitions>();
+    }
+
+    private void Start()
+    {
+        waitTime = 1f;//Remember to always check waitTime for if it's 0 or not 
     }
 
     public void ReceiveId(int id)

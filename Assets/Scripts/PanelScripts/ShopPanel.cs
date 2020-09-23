@@ -18,12 +18,15 @@ public class ShopPanel : MonoBehaviour
     [SerializeField] private ItemDataList itemData;
 
     [SerializeField] private GameObject itemInfoPan;
-
-    void Start()
+    private void Awake()
     {
         yourItemsList = FindObjectOfType<YourItemsList>();
         inventory = FindObjectOfType<Inventory>();
         barManager = FindObjectOfType<BarManager>();
+    }
+
+    void Start()
+    {
         foreach (var item in itemData.itemDatas)
         {
             GameObject itemInstance = (GameObject)Instantiate(itemPrefab);

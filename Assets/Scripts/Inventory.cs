@@ -15,8 +15,6 @@ public class Inventory : MonoBehaviour
     public int weaponUpgradeAmount;
     public int armorUpgradeAmount;
 
-   // public bool[] isFull;
-
 
     public void ItemPickUp(ItemData item)
     {

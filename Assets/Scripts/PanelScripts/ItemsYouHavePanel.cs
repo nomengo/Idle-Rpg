@@ -1,28 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemsYouHavePanel : MonoBehaviour
 {
-    private YourItemsList yours;
+    private YourItemsList yourItems;
 
     public GameObject itemHolder;
     public GameObject allItemsContainer;
 
-    public List<ItemData> itemsYouHave = new List<ItemData>();
-
-    private void Start()
+    private void Awake()
     {
-        yours = FindObjectOfType<YourItemsList>();
-        foreach (var i in yours.Items)
-        {
-            itemsYouHave.Add(i);
-        }
+        yourItems = FindObjectOfType<YourItemsList>();
+    }
 
-        foreach (var item in itemsYouHave)
+    private void Update()
+    {
+        if (yourItems.Items.Count != 0)
         {
-           GameObject ItemYouHave = Instantiate(itemHolder);
-           ItemYouHave.transform.SetParent(allItemsContainer.transform, false);
+            foreach (var item in yourItems.Items)
+            {
+               
+                GameObject itemObject = Instantiate(itemHolder);
+                itemObject.transform.SetParent(allItemsContainer.transform, false);
+                itemObject.transform.Find("ItemButton").GetComponent<Image>().sprite = item.itemImage;
+                itemObject.transform.Find("ItemButton").GetComponent<Button>().onClick.AddListener(() => InventoryInfoCall(item));
+            }
+        }
+        else
+        {
+            //As always do nothing
         }
     }
+
+    private void InventoryInfoCall(ItemData itemdAtA)
+    {
+
+    }
+
 }

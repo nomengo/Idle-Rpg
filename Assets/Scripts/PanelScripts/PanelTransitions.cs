@@ -16,6 +16,7 @@ public class PanelTransitions : MonoBehaviour
     public GameObject BattlePan;
     public GameObject BlacksmithPan;
     public GameObject AllItemsYouHavePan;
+    public GameObject AllGamePanelsPan;
 
     public void GoToMainPanel()
     {
@@ -23,6 +24,7 @@ public class PanelTransitions : MonoBehaviour
         BattlePan.SetActive(false);
         ShopPan.SetActive(false);
         QuestPan.SetActive(false);
+        AllGamePanelsPan.SetActive(true);
         DownGamePans.SetActive(true);
         MainUpPan.SetActive(true);
         GuildPan.SetActive(false);
@@ -86,7 +88,10 @@ public class PanelTransitions : MonoBehaviour
     public void GoToAllItemsPanel()
     {
         MainUpPan.SetActive(false);
-        DownGamePans.SetActive(false);       
+        DownGamePans.SetActive(false);
+        AllGamePanelsPan.SetActive(false);
+        AllItemsYouHavePan.transform.position = new Vector3(AllItemsYouHavePan.transform.position.x, -500, AllItemsYouHavePan.transform.position.z);
         AllItemsYouHavePan.SetActive(true);
+        AllItemsYouHavePan.GetComponent<RectTransform>().DOAnchorPosY(0, .5f);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 public class PanelTransitions : MonoBehaviour
-{
+{ 
     [Header("PanelGameObject")]
     public GameObject MainDownPan;
     public GameObject GuildPan;
@@ -20,16 +20,21 @@ public class PanelTransitions : MonoBehaviour
 
     public void GoToMainPanel()
     {
+        AllItemsYouHavePan.GetComponent<ItemsYouHavePanel>().DestroyItem();
         AllItemsYouHavePan.SetActive(false);
+
         BattlePan.SetActive(false);
         ShopPan.SetActive(false);
         QuestPan.SetActive(false);
+
         AllGamePanelsPan.SetActive(true);
         DownGamePans.SetActive(true);
         MainUpPan.SetActive(true);
+
         GuildPan.SetActive(false);
         CreaturePan.SetActive(false);
         BlacksmithPan.SetActive(false);
+
         MainDownPan.transform.position = new Vector3(MainDownPan.transform.position.x, -500, MainDownPan.transform.position.z);
         MainDownPan.SetActive(true);
         MainDownPan.GetComponent<RectTransform>().DOAnchorPosY(0,.5f);
@@ -92,6 +97,7 @@ public class PanelTransitions : MonoBehaviour
         AllGamePanelsPan.SetActive(false);
         AllItemsYouHavePan.transform.position = new Vector3(AllItemsYouHavePan.transform.position.x, -500, AllItemsYouHavePan.transform.position.z);
         AllItemsYouHavePan.SetActive(true);
+        AllItemsYouHavePan.GetComponent<ItemsYouHavePanel>().ShowItem();
         AllItemsYouHavePan.GetComponent<RectTransform>().DOAnchorPosY(0, .5f);
     }
 }

@@ -15,13 +15,12 @@ public class ItemsYouHavePanel : MonoBehaviour
         yourItems = FindObjectOfType<YourItemsList>();
     }
 
-    private void Update()
+    public void ShowItem()
     {
         if (yourItems.Items.Count != 0)
         {
             foreach (var item in yourItems.Items)
             {
-               
                 GameObject itemObject = Instantiate(itemHolder);
                 itemObject.transform.SetParent(allItemsContainer.transform, false);
                 itemObject.transform.Find("ItemButton").GetComponent<Image>().sprite = item.itemImage;
@@ -34,9 +33,25 @@ public class ItemsYouHavePanel : MonoBehaviour
         }
     }
 
+    public void DestroyItem()
+    {
+        if (allItemsContainer.transform.childCount != 0)
+        {
+            for (int i = 0; i < allItemsContainer.transform.childCount; i++)
+            {
+                Debug.Log("It got destroyed!!");
+                Destroy(allItemsContainer.transform.GetChild(i).gameObject);
+            }
+        }
+        else
+        {
+            //Do nothing
+        }
+    }
+
     private void InventoryInfoCall(ItemData itemdAtA)
     {
-
+        //print(itemdAtA.itemDescription);
     }
 
 }

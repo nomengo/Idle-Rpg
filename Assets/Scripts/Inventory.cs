@@ -42,6 +42,46 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void ItemGiveUp(ItemData item)
+    {
+        if(item.itemType == ItemType.Weapon)
+        {
+            if (itemDamage != 0)
+            {
+                weaponHolder.GetComponent<HolderData>().itemData.itemType = ItemType.Default;
+                weaponHolder.GetComponent<HolderData>().itemData.itemName = "";
+                weaponHolder.GetComponent<HolderData>().itemData.itemDamage = 0f;
+                weaponHolder.GetComponent<HolderData>().itemData.itemImage = null;
+                weaponHolder.transform.GetChild(1).GetComponent<Image>().sprite = null;
+                itemDamage = 0f;
+                weaponUpgradeAmount = 0;
+            }
+            else
+            {
+
+            }
+        }
+        else if(item.itemType == ItemType.Armor)
+        {
+            if (itemArmor != 0)
+            {
+                armorHolder.GetComponent<HolderData>().itemData.itemType = ItemType.Default;
+                armorHolder.GetComponent<HolderData>().itemData.itemName = "";
+                armorHolder.GetComponent<HolderData>().itemData.itemArmor = 0f;
+                armorHolder.GetComponent<HolderData>().itemData.itemImage = null;
+                armorHolder.transform.GetChild(1).GetComponent<Image>().sprite = null;
+                itemArmor = 0f;
+                armorUpgradeAmount = 0;
+            }
+            else
+            {
+
+            }
+        }
+    }
+
+
+
     private void AllDatasToWeaponHolder(ItemData itemData)
     {
         weaponHolder.GetComponent<HolderData>().itemData.itemType = itemData.itemType;
@@ -63,4 +103,5 @@ public class Inventory : MonoBehaviour
         itemArmor = itemData.itemArmor;
         armorUpgradeAmount = itemData.itemUpgradeAmount;
     }
+
 }

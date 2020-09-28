@@ -8,6 +8,7 @@ public class ItemsYouHavePanel : MonoBehaviour
 {
     private YourItemsList yourItems;
     private PanelTransitions panelTransitions;
+    private Inventory inventory;
 
     public GameObject itemHolder;
     public GameObject allItemsContainer;
@@ -17,6 +18,7 @@ public class ItemsYouHavePanel : MonoBehaviour
 
     private void Awake()
     {
+        inventory = FindObjectOfType<Inventory>();
         yourItems = FindObjectOfType<YourItemsList>();
         panelTransitions = FindObjectOfType<PanelTransitions>();
     }
@@ -72,24 +74,38 @@ public class ItemsYouHavePanel : MonoBehaviour
         inventoryInfoPlace.transform.Find("ItemDefenseText").GetComponent<Text>().text = "Defense: " + itemdAtA.itemArmor.ToString();
 
         inventoryInfoPlace.transform.Find("ReturnButton").GetComponent<Button>().onClick.AddListener(() => inventoryInfoPlace.SetActive(false));
-        inventoryInfoPlace.transform.Find("DiscardButton").GetComponent<Button>().onClick.AddListener(() => DiscardTheItem(itemdAtA));
+        //inventoryInfoPlace.transform.Find("DiscardButton").GetComponent<Button>().onClick.AddListener(() => DiscardTheItem(itemdAtA));
+        inventoryInfoPlace.transform.Find("EquipButton").GetComponent<Button>().onClick.AddListener(() => EquipItem(itemdAtA));
+        inventoryInfoPlace.transform.Find("UnequipButton").GetComponent<Button>().onClick.AddListener(() => UnequipItem(itemdAtA));
 
     }
 
-
-    private void DiscardTheItem(ItemData itDat)
+    void EquipItem(ItemData itemData)
     {
-        foreach (var item in yourItems.Items)
-        {
-            if (item.itemID == itDat.itemID)
-            {
-                yourItems.Items.Remove(itDat);
-                panelTransitions.GoToMainPanel();
-            }
-            else
-            {
-                //Do nothing
-            }
-        }
+        inventory.ItemPickUp(itemData);
     }
+
+
+    void UnequipItem(ItemData itemData)
+    {
+        inventory.ItemGiveUp(itemData);
+    }
+
+
+    //private void DiscardTheItem(ItemData itDat)
+    //{
+    //    foreach (var item in yourItems.Items)
+    //    {
+    //        if (item.itemID == itDat.itemID)
+    //        {
+    //            yourItems.Items.Remove(itDat);
+    //            inventoryInfoPlace.SetActive(false);
+    //            panelTransitions.GoToMainPanel();
+    //        }
+    //        else
+    //        {
+    //            //Do nothing
+    //        }
+    //    }
+    //}
 }

@@ -80,7 +80,7 @@ public class ShopPanel : MonoBehaviour
         {
             yourItemsList.Items.Add(itemData);
             barManager.TakeMyMoney(itemData.itemPrice);
-            inventory.ItemPickUp(itemData);
+            //inventory.ItemPickUp(itemData);
             itemDamagePlace.SetActive(false);
             itemArmorPlace.SetActive(false);
             itemInfoPan.SetActive(false);

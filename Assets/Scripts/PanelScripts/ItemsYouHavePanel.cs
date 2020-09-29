@@ -52,7 +52,7 @@ public class ItemsYouHavePanel : MonoBehaviour
         {
             for (int i = 0; i < allItemsContainer.transform.childCount; i++)
             {
-                Debug.Log("It got destroyed!!");
+                Debug.Log("The Method Named DestroyItem Has Been Called!!");
                 Destroy(allItemsContainer.transform.GetChild(i).gameObject);
             }
         }
@@ -74,38 +74,49 @@ public class ItemsYouHavePanel : MonoBehaviour
         inventoryInfoPlace.transform.Find("ItemDefenseText").GetComponent<Text>().text = "Defense: " + itemdAtA.itemArmor.ToString();
 
         inventoryInfoPlace.transform.Find("ReturnButton").GetComponent<Button>().onClick.AddListener(() => inventoryInfoPlace.SetActive(false));
-        //inventoryInfoPlace.transform.Find("DiscardButton").GetComponent<Button>().onClick.AddListener(() => DiscardTheItem(itemdAtA));
-        inventoryInfoPlace.transform.Find("EquipButton").GetComponent<Button>().onClick.AddListener(() => EquipItem(itemdAtA));
-        inventoryInfoPlace.transform.Find("UnequipButton").GetComponent<Button>().onClick.AddListener(() => UnequipItem(itemdAtA));
 
+        inventoryInfoPlace.transform.Find("DiscardButton").GetComponent<Button>().onClick.RemoveAllListeners();
+        inventoryInfoPlace.transform.Find("DiscardButton").GetComponent<Button>().onClick.AddListener(() => DiscardTheItem(itemdAtA));
+
+        inventoryInfoPlace.transform.Find("EquipButton").GetComponent<Button>().onClick.RemoveAllListeners();
+        inventoryInfoPlace.transform.Find("EquipButton").GetComponent<Button>().onClick.AddListener(() => EquipItem(itemdAtA));
+
+        inventoryInfoPlace.transform.Find("UnequipButton").GetComponent<Button>().onClick.RemoveAllListeners();
+        inventoryInfoPlace.transform.Find("UnequipButton").GetComponent<Button>().onClick.AddListener(() => UnequipItem(itemdAtA));
     }
 
     void EquipItem(ItemData itemData)
     {
+
         inventory.ItemPickUp(itemData);
     }
 
 
     void UnequipItem(ItemData itemData)
     {
+        print(itemData.itemID);
         inventory.ItemGiveUp(itemData);
     }
 
 
-    //private void DiscardTheItem(ItemData itDat)
-    //{
-    //    foreach (var item in yourItems.Items)
-    //    {
-    //        if (item.itemID == itDat.itemID)
-    //        {
-    //            yourItems.Items.Remove(itDat);
-    //            inventoryInfoPlace.SetActive(false);
-    //            panelTransitions.GoToMainPanel();
-    //        }
-    //        else
-    //        {
-    //            //Do nothing
-    //        }
-    //    }
-    //}
+    private void DiscardTheItem(ItemData itDat)
+    {
+        for (int i = 0; i < yourItems.Items.Count; i++)
+        {
+            if(yourItems.Items[i].itemID == itDat.itemID)
+            {
+                print("Item Has Been Discarded!!");
+                yourItems.Items.RemoveAt(i);
+                inventoryInfoPlace.SetActive(false);
+                //
+                DestroyItem();
+                //
+                ShowItem();
+            }
+            else
+            {
+                print("Nothing Discarded!!");
+            }
+        }
+    }
 }

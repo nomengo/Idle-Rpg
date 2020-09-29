@@ -14688,6 +14688,8 @@ MonoBehaviour:
   weaponHolder: {fileID: 46615169}
   armorHolder: {fileID: 1291976841}
   healthPotHolder: {fileID: 1464291962}
+  weaponHolderSprite: {fileID: 21300000, guid: e43f3c2c7fb908042a497ca3ea2dbc4a, type: 3}
+  armorHolderSprite: {fileID: 21300000, guid: 975833e0169b3cb47808aa164db46fc0, type: 3}
   itemDamage: 0
   itemArmor: 0
   weaponUpgradeAmount: 0

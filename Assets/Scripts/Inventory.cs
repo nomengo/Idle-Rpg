@@ -9,6 +9,9 @@ public class Inventory : MonoBehaviour
     public GameObject armorHolder;
     public GameObject healthPotHolder;
 
+    [SerializeField] private Sprite weaponHolderSprite;
+    [SerializeField] private Sprite armorHolderSprite;
+
     public float itemDamage;
     public float itemArmor;
 
@@ -52,7 +55,7 @@ public class Inventory : MonoBehaviour
                 weaponHolder.GetComponent<HolderData>().itemData.itemName = "";
                 weaponHolder.GetComponent<HolderData>().itemData.itemDamage = 0f;
                 weaponHolder.GetComponent<HolderData>().itemData.itemImage = null;
-                weaponHolder.transform.GetChild(1).GetComponent<Image>().sprite = null;
+                weaponHolder.transform.GetChild(1).GetComponent<Image>().sprite = weaponHolderSprite;
                 itemDamage = 0f;
                 weaponUpgradeAmount = 0;
             }
@@ -69,7 +72,7 @@ public class Inventory : MonoBehaviour
                 armorHolder.GetComponent<HolderData>().itemData.itemName = "";
                 armorHolder.GetComponent<HolderData>().itemData.itemArmor = 0f;
                 armorHolder.GetComponent<HolderData>().itemData.itemImage = null;
-                armorHolder.transform.GetChild(1).GetComponent<Image>().sprite = null;
+                armorHolder.transform.GetChild(1).GetComponent<Image>().sprite = armorHolderSprite;
                 itemArmor = 0f;
                 armorUpgradeAmount = 0;
             }

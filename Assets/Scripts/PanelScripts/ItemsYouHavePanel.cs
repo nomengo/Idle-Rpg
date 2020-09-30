@@ -14,6 +14,7 @@ public class ItemsYouHavePanel : MonoBehaviour
     public GameObject allItemsContainer;
 
     [SerializeField] private GameObject inventoryInfoPlace;
+    [SerializeField] private GameObject infoManagement;
 
 
     private void Awake()
@@ -87,7 +88,8 @@ public class ItemsYouHavePanel : MonoBehaviour
 
     void EquipItem(ItemData itemData)
     {
-
+        // print("Item Is Equipped");
+        infoManagement.GetComponent<InfoManagement>().Info("Item Is Equipped!!", 1f);
         inventory.ItemPickUp(itemData);
     }
 

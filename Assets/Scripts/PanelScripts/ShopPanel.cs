@@ -18,6 +18,7 @@ public class ShopPanel : MonoBehaviour
     [SerializeField] private ItemDataList itemData;
 
     [SerializeField] private GameObject itemInfoPan;
+    [SerializeField] private GameObject infoManagement;
     private void Awake()
     {
         yourItemsList = FindObjectOfType<YourItemsList>();
@@ -78,6 +79,7 @@ public class ShopPanel : MonoBehaviour
     {
         if(PlayerData.money >= itemData.itemPrice)
         {
+            infoManagement.GetComponent<InfoManagement>().Info("You Bought The Item!!", 1f);
             yourItemsList.Items.Add(itemData);
             barManager.TakeMyMoney(itemData.itemPrice);
             //inventory.ItemPickUp(itemData);

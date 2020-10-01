@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InfoManagement : MonoBehaviour
 {
+    [SerializeField] private GameObject infoObject;
+
+    /// <summary>
+    /// This method will gonna execute specific coroutine for info tip when get called
+    /// </summary>
+    /// <param name="info">The</param>
+    /// <param name="wait"></param>
     public void Info(string info , float wait)
     {
         StartCoroutine(InfoCo(info, wait));
@@ -14,10 +22,10 @@ public class InfoManagement : MonoBehaviour
     {
         while (true)
         {
-            transform.GetChild(0).gameObject.SetActive(true);
-            transform.GetChild(0).transform.Find("InfoText").GetComponent<Text>().text = words;
+            infoObject.SetActive(true);
+            infoObject.transform.Find("InfoText").GetComponent<TextMeshProUGUI>().text = words;
             yield return new WaitForSeconds(waitTime);
-            transform.GetChild(0).gameObject.SetActive(false);
+            infoObject.SetActive(false);
             break;
         }
     }

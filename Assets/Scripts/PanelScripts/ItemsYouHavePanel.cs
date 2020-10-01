@@ -96,7 +96,8 @@ public class ItemsYouHavePanel : MonoBehaviour
 
     void UnequipItem(ItemData itemData)
     {
-        print(itemData.itemID);
+        //print(itemData.itemID);
+        infoManagement.GetComponent<InfoManagement>().Info("Item Is Equipped!!", 1f);
         inventory.ItemGiveUp(itemData);
     }
 
@@ -107,7 +108,8 @@ public class ItemsYouHavePanel : MonoBehaviour
         {
             if(yourItems.Items[i].itemID == itDat.itemID)
             {
-                print("Item Has Been Discarded!!");
+                //print("Item Has Been Discarded!!");
+                infoManagement.GetComponent<InfoManagement>().Info("Item Has Been Discarded!!", 1f);
                 yourItems.Items.RemoveAt(i);
                 inventoryInfoPlace.SetActive(false);
                 //

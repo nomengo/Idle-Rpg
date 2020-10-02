@@ -1,8 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using Febucci.UI;
 
 public class InfoManagement : MonoBehaviour
 {
@@ -23,7 +22,7 @@ public class InfoManagement : MonoBehaviour
         while (true)
         {
             infoObject.SetActive(true);
-            infoObject.transform.Find("InfoText").GetComponent<TextMeshProUGUI>().text = words;
+            infoObject.transform.Find("InfoText").GetComponent<TextAnimatorPlayer>().ShowText(words);
             yield return new WaitForSeconds(waitTime);
             infoObject.SetActive(false);
             break;

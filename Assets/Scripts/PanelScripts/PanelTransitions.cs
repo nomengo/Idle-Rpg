@@ -100,4 +100,9 @@ public class PanelTransitions : MonoBehaviour
         AllItemsYouHavePan.GetComponent<ItemsYouHavePanel>().ShowItem();
         AllItemsYouHavePan.GetComponent<RectTransform>().DOAnchorPosY(0, .5f);
     }
+
+    public void GoToSettingsPanel()
+    {
+
+    }
 }

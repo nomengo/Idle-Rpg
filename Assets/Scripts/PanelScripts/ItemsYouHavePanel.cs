@@ -43,7 +43,7 @@ public class ItemsYouHavePanel : MonoBehaviour
         }
         else
         {
-            //As always do nothing
+            infoManagement.GetComponent<InfoManagement>().Info("YOU HAVE NO ITEMS IN YOUR INVENTORY!!", 2f);
         }
     }
 
@@ -97,7 +97,7 @@ public class ItemsYouHavePanel : MonoBehaviour
     void UnequipItem(ItemData itemData)
     {
         //print(itemData.itemID);
-        infoManagement.GetComponent<InfoManagement>().Info("Item Is Equipped!!", 1f);
+        infoManagement.GetComponent<InfoManagement>().Info("Item Is Unequipped!!", 1f);
         inventory.ItemGiveUp(itemData);
     }
 

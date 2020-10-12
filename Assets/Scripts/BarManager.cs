@@ -13,7 +13,7 @@ public class BarManager : MonoBehaviour
 
     public float waitingTime = 0.1f; 
 
-    private const int level = 1;
+    private int level = 1;
 
     private void Start()
     {
@@ -22,17 +22,18 @@ public class BarManager : MonoBehaviour
 
     public void GetExperience(float experience)
     {
-        experienceBar.GetComponent<Image>().fillAmount += experience / PlayerData.level;
+        experienceBar.GetComponent<Image>().fillAmount += experience / level;
     }
 
     public void HealthDecrease(float damage)
     {
-        healthBar.GetComponent<Image>().fillAmount -= damage / PlayerData.level;
+        healthBar.GetComponent<Image>().fillAmount -= damage / level;
+        Debug.Log(healthBar.GetComponent<Image>().fillAmount);
     }
 
     public void EnergyDecrease(float amount)
     {
-        energyBar.GetComponent<Image>().fillAmount -= amount / PlayerData.level;
+        energyBar.GetComponent<Image>().fillAmount -= amount / level;
     }
 
     public void GiveMeTheMoney(int money)
@@ -51,8 +52,9 @@ public class BarManager : MonoBehaviour
     {
         if (experienceBar.GetComponent<Image>().fillAmount == 1)
         {
-            PlayerData.level += level;
-            experienceText.text = "LEVEL: " + PlayerData.level.ToString("0");
+            //PlayerData.level += level;
+            level += 1;
+            experienceText.text = "LEVEL: " + level.ToString("0"); //PlayerData.level.ToString("0");
             experienceBar.GetComponent<Image>().fillAmount = 0;
         }
     }
@@ -61,12 +63,12 @@ public class BarManager : MonoBehaviour
     {
         while (true)
         {
-            if (energyBar.GetComponent<Image>().fillAmount != 1)
+            if (energyBar.GetComponent<Image>().fillAmount < 1)
             {
                 yield return new WaitForSeconds(waitingTime);
                 energyBar.GetComponent<Image>().fillAmount += 0.1f;
             }
-            if (healthBar.GetComponent<Image>().fillAmount != 1)
+            if (healthBar.GetComponent<Image>().fillAmount < 1)
             {
                 yield return new WaitForSeconds(waitingTime);
                 healthBar.GetComponent<Image>().fillAmount += 0.1f;

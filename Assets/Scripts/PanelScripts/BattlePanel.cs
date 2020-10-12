@@ -141,7 +141,7 @@ public class BattlePanel : MonoBehaviour
                             isTheBattleCompleted = true;
                             break;
                         }
-                        else if (_barManager.healthBar.GetComponent<Image>().fillAmount == 0)
+                        else if (_barManager.healthBar.GetComponent<Image>().fillAmount <= 0)
                         {
                             //if you die
                             BattleText.text = "YOU LOSE!!";

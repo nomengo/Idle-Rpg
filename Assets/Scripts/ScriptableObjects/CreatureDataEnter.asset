@@ -103,7 +103,7 @@ MonoBehaviour:
     howMuchEnergyNeededForOneTime: 1
     howMuchHealthNeededForOneTime: 1.2
     howMuchExperienceDoesOneGonnaGet: 20
-  - creatureName: GreaSkeleton
+  - creatureName: GreatSkeleton
     creatureDescription: More powerful skeleton , get ready
     creatureLevel: 25
     rewardForCreature: 3000

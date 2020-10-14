@@ -7,7 +7,6 @@ public class Inventory : MonoBehaviour
 {
     public GameObject weaponHolder;
     public GameObject armorHolder;
-    public GameObject healthPotHolder;
 
     [SerializeField] private Sprite weaponHolderSprite;
     [SerializeField] private Sprite armorHolderSprite;
@@ -21,12 +20,7 @@ public class Inventory : MonoBehaviour
 
     public void ItemPickUp(ItemData item)
     {
-       if(item.itemType == ItemType.Consumable)
-        {
-            Debug.Log("ItemType : Consumable");
-            healthPotHolder.transform.GetChild(1).GetComponent<Image>().sprite = item.itemImage;
-        }
-       else if(item.itemType == ItemType.Weapon)
+        if(item.itemType == ItemType.Weapon)
         {
             Debug.Log("ItemType : Weapon");
             weaponHolder.transform.GetChild(1).GetComponent<Image>().sprite = item.itemImage;

@@ -105,4 +105,9 @@ public class PanelTransitions : MonoBehaviour
     {
 
     }
+
+    public void QuitTheGame()
+    {
+        Application.Quit();
+    }
 }

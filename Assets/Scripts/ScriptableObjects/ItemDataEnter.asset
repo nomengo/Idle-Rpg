@@ -49,3 +49,21 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: 1b135e109e672e947848bc768225c8f4, type: 3}
     itemDamage: 0
     itemArmor: 25
+  - itemType: 0
+    itemName: Diamond Sword
+    itemDescription: A Sword made from diamond
+    itemPrice: 10000
+    itemID: 4
+    itemUpgradeAmount: 20
+    itemImage: {fileID: 21300000, guid: 884cf216a13b274498446da8364d7d6f, type: 3}
+    itemDamage: 500
+    itemArmor: 0
+  - itemType: 0
+    itemName: Saber
+    itemDescription: A Sword made from diamond
+    itemPrice: 500
+    itemID: 5
+    itemUpgradeAmount: 5
+    itemImage: {fileID: 21300000, guid: 329dee6d2a9a90e4bbd9615a19a14d71, type: 3}
+    itemDamage: 50
+    itemArmor: 0

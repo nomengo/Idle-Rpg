@@ -77,7 +77,7 @@ public class ShopPanel : MonoBehaviour
 
     public void BuyItem(ItemData itemData)
     {
-        if(PlayerData.money >= itemData.itemPrice)
+        if(barManager.Money >= itemData.itemPrice)
         {
             infoManagement.GetComponent<InfoManagement>().Info("You Bought The Item!!", 1f);
             yourItemsList.Items.Add(itemData);
@@ -89,14 +89,7 @@ public class ShopPanel : MonoBehaviour
         }
         else
         {
-            StartCoroutine(GoForTextChange());
+            infoManagement.GetComponent<InfoManagement>().Info("Not Enough Money!!", 1f);
         }
-    }
-
-    private IEnumerator GoForTextChange()
-    {
-        itemInfoPan.transform.GetChild(0).GetChild(0).Find("BuyButton").GetChild(0).GetComponent<Text>().text = "NO CASH!";
-        yield return new WaitForSeconds(1f);
-        itemInfoPan.transform.GetChild(0).GetChild(0).Find("BuyButton").GetChild(0).GetComponent<Text>().text = "BUY";
     }
 }

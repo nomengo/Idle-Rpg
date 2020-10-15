@@ -17,6 +17,7 @@ public class PanelTransitions : MonoBehaviour
     public GameObject BlacksmithPan;
     public GameObject AllItemsYouHavePan;
     public GameObject AllGamePanelsPan;
+    public GameObject SettingsPan;
 
     public void GoToMainPanel()
     {
@@ -26,6 +27,7 @@ public class PanelTransitions : MonoBehaviour
         BattlePan.SetActive(false);
         ShopPan.SetActive(false);
         QuestPan.SetActive(false);
+        SettingsPan.SetActive(false);
 
         AllGamePanelsPan.SetActive(true);
         DownGamePans.SetActive(true);
@@ -103,7 +105,11 @@ public class PanelTransitions : MonoBehaviour
 
     public void GoToSettingsPanel()
     {
-
+        MainUpPan.SetActive(false);
+        AllGamePanelsPan.SetActive(false);
+        SettingsPan.transform.position = new Vector3(SettingsPan.transform.position.x, -500, SettingsPan.transform.position.z);
+        SettingsPan.SetActive(true);
+        SettingsPan.GetComponent<RectTransform>().DOAnchorPosY(0, .5f);
     }
 
     public void QuitTheGame()

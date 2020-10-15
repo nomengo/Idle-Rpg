@@ -78,7 +78,6 @@ public class Inventory : MonoBehaviour
     }
 
 
-
     private void AllDatasToWeaponHolder(ItemData itemData)
     {
         weaponHolder.GetComponent<HolderData>().itemData.itemType = itemData.itemType;

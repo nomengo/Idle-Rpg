@@ -2,7 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-    public static class PlayerData
+[System.Serializable]
+public class PlayerData
+{
+    public int Level;
+    public int Money;
+
+    public PlayerData(BarManager barManager)
     {
-        public static int money { get { return PlayerPrefs.GetInt("Money"); } set { PlayerPrefs.SetInt("Money", value); } }  
+        Level = barManager.Level;
+        Money = barManager.Money;
     }
+}

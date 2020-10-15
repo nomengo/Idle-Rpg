@@ -29,7 +29,7 @@ public class BarManager : MonoBehaviour
     public void HealthDecrease(float damage)
     {
         healthBar.GetComponent<Image>().fillAmount -= damage / Level;
-        Debug.Log(healthBar.GetComponent<Image>().fillAmount);
+        //Debug.Log(healthBar.GetComponent<Image>().fillAmount);
     }
 
     public void EnergyDecrease(float amount)
@@ -76,5 +76,17 @@ public class BarManager : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    public void SaveBarManager()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+
+    public void LoadBarManager()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        Level = data.Level;
+        Money = data.Money;
     }
 }

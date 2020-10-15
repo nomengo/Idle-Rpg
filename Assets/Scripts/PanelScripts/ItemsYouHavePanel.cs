@@ -89,6 +89,14 @@ public class ItemsYouHavePanel : MonoBehaviour
     void EquipItem(ItemData itemData)
     {
         // print("Item Is Equipped");
+        //if(inventory.weaponHolder.GetComponent<HolderData>().itemData.itemID != itemData.itemID || inventory.armorHolder.GetComponent<HolderData>().itemData.itemID != itemData.itemID)
+        //{
+            
+        //}
+        //else
+        //{
+        //    infoManagement.GetComponent<InfoManagement>().Info("Item Is Already Equipped!!", 1f);
+        //}
         infoManagement.GetComponent<InfoManagement>().Info("Item Is Equipped!!", 1f);
         inventory.ItemPickUp(itemData);
     }
@@ -97,6 +105,14 @@ public class ItemsYouHavePanel : MonoBehaviour
     void UnequipItem(ItemData itemData)
     {
         //print(itemData.itemID);
+        //if(inventory.weaponHolder.GetComponent<HolderData>().itemData.itemID == itemData.itemID || inventory.armorHolder.GetComponent<HolderData>().itemData.itemID == itemData.itemID)
+        //{
+            
+        //}
+        //else
+        //{
+        //    infoManagement.GetComponent<InfoManagement>().Info("Item Is Already Unequipped!!", 1f);
+        //}
         infoManagement.GetComponent<InfoManagement>().Info("Item Is Unequipped!!", 1f);
         inventory.ItemGiveUp(itemData);
     }

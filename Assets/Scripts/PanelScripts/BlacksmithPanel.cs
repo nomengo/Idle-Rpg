@@ -69,7 +69,6 @@ public class BlacksmithPanel : MonoBehaviour
         {
             _inventory.itemDamage += 1f;
             //PlayerData.money -= gItem.itemPrice;
-            Debug.Log(PlayerData.money);
             Debug.Log("You Upgraded Your Weapon!!!");
             _inventory.weaponUpgradeAmount -= 1;
         }
@@ -86,7 +85,6 @@ public class BlacksmithPanel : MonoBehaviour
         {
             _inventory.itemArmor += 1f;
             //PlayerData.money -= gItem.itemPrice;
-            Debug.Log(PlayerData.money);
             Debug.Log("You Upgraded Your Armor!!!");
             _inventory.armorUpgradeAmount -= 1;
         }

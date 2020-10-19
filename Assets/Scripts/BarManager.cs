@@ -54,6 +54,7 @@ public class BarManager : MonoBehaviour
         if (experienceBar.GetComponent<Image>().fillAmount == 1)
         {
             //PlayerData.level += level;
+            ReklamScript.InsterstitialGoster();
             Level += 1;
             experienceText.text = "LEVEL: " + Level.ToString("0"); //PlayerData.level.ToString("0");
             experienceBar.GetComponent<Image>().fillAmount = 0;

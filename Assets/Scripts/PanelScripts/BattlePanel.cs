@@ -145,6 +145,7 @@ public class BattlePanel : MonoBehaviour
                         {
                             //if you die
                             BattleText.text = "YOU LOSE!!";
+                            ReklamScript.InsterstitialGoster();
                             yield return new WaitForSeconds(waitTime);
                             BattleText.text = "";
                             isTheBattleCompleted = true;
